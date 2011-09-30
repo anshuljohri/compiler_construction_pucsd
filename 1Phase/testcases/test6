@@ -1,0 +1,44 @@
+PROGRAM Calculates;
+	VAR InChar : CHARACTER;
+    		Length,Width,Height,Base,Radius : FLOAT;
+BEGIN  
+   WHILE 0 OR 1 DO
+      BEGIN
+      WRITE('InWhile');
+      WRITE('Please');
+      WRITE('Selectuit');
+      WRITE('Reques');
+      InChar := ReadKey;
+      CASE UPCASE(INCHAR) OF
+       'S' : BEGIN
+             WRITE('SQSIDE');
+             READ(LENGTH);
+             WRITE('Th')
+             END;
+
+       'R' : BEGIN
+             WRITE('RECTANGL');
+             READ(WIDTH);
+             WRITE('ENTERHEIGHT');
+             READ(HEIGHT);
+             WRITE('IS')
+             END;
+
+       'T' : BEGIN
+             WRITE('TRIA');
+             READ(BASE);
+             
+             READ(HEIGHT)
+	  
+             END;
+
+       'C' : BEGIN
+             
+             READ(RADIUS)
+             
+             END;
+
+       'Q' : WRITE('QUIT')
+      END
+   END
+END

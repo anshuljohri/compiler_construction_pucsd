@@ -1,0 +1,27 @@
+PROGRAM SumAverage;
+VAR
+   A, B, C, D, E : INTEGER;
+   Sum : INTEGER;
+   Average : INTEGER;
+BEGIN
+   WRITE('firstnumber');
+   READ(A);
+   WRITE('secondnumber');
+   READ(B);
+   WRITE('thirdnumber');
+   READ(C);
+   WRITE('fourthnumber');
+   READ(D);
+   WRITE('fifthnumber');
+   READ(E);
+   Sum := A + B + C + D + E;
+   Average:=Sum;
+   WRITE('NumberofINTEGER');
+   WRITE('Number');
+   WRITE('Number');
+   WRITE('Number');
+   WRITE('Number');
+   WRITE('Number');
+   WRITE('Sum');
+   WRITE('Average')
+END

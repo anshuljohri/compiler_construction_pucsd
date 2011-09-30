@@ -1,0 +1,16 @@
+
+
+PROGRAM TheStars;
+VAR
+   i, j, usr : INTEGER;
+BEGIN
+   WRITE('Howmanystarsdyouwant');
+   READ usr);
+           BEGIN
+            IF (i > usr) THEN i:=0 
+            ELSE j:=1
+ ;
+
+   WRITE('a');
+   READ(i)
+END

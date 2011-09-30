@@ -1,0 +1,46 @@
+PROGRAM AmortizationTable;
+VAR Month :INTEGER;      
+    Balance : INTEGER;
+    Payment : INTEGER;
+    InterestRate : INTEGER;
+
+PROCEDURE InitializeData;
+BEGIN
+   Balance {balance} := 2500.0;
+   StartingMonth := 5;
+   Payment := 100.0;
+   InterestRate := 0.13*12.0 
+END;
+
+PROCEDURE PrintAnnualHeader;
+
+PROCEDURE CalculateAndPrint; 
+VAR InterestPayment : INTEGER;
+    PrincipalPayment : INTEGER;
+
+BEGIN
+   IF Balance > 0.0 THEN BEGIN
+      InterestPayment := InterestRate * Balance;
+      PrincipalPayment := Payment - InterestPayment;
+      IF PrincipalPayment > Balance THEN BEGIN 
+         PrincipalPayment := Balance;          
+         Balance := 0.0
+      END
+      ELSE BEGIN 
+         Balance := Balance - PrincipalPayment
+      END
+                   
+   END
+END
+
+VAR x,y : FLOAT;
+
+
+BEGIN
+   WRITE('Annual')
+
+END;
+BEGIN
+   b:=0
+END
+

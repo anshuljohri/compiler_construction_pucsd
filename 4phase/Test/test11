@@ -1,0 +1,22 @@
+PROGRAM test11;
+	FUNCTION INSERTION(N:INTEGER):INTEGER;
+	VAR A:ARRAY [1..20] OF INTEGER;K,TEMP,PTR:INTEGER;
+	BEGIN
+		k:=2;
+		WHILE (K<N) DO
+				BEGIN
+					TEMP:=A[K];
+					PTR:=K-1;
+					WHILE (TEMP<A[PTR]) DO
+							BEGIN
+								A[PTR+1]:=A[PTR];
+								PTR:=PTR-1
+							END;
+					A[PTR+1]:=TEMP
+				END
+	END;
+
+			
+	BEGIN
+		WRITE('END')
+	END

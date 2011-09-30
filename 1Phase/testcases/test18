@@ -1,0 +1,19 @@
+PROGRAM SimpleArrays;
+
+VAR Count,Index :INTEGER;
+    Automobiles : ARRAY[1..12] OF INTEGER;
+
+BEGIN
+    Index := 1;
+      Automobiles [ 6] := Index + 10;
+   WRITE('This');
+   WRITE(2);
+    Index := 1;
+      WRITE('automobile');
+   WRITE(45);
+   WRITE('End')
+END
+
+
+
+

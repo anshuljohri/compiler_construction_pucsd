@@ -1,0 +1,70 @@
+			Name:  Anshul Johri
+
+
+Data Structure Used in Design :
+------------------------------
+                 In building Symbol Table, main concern in choosing data structure is time efficiency. As compiler refers symbol table very frequently. So i have choosen HASH TABLE. As in hash table the order if insertion is constant.    And the order of searching is linear. But the main problem in hash table is    collison, which can be avoided by choosing a perfect hash function.
+
+
+The Concept :
+------------
+                There are four members in my structure, these are name of symbol, its type whether it is simply a variable or function or a procedure, its scope(basically level) and line number of that symbol. When a hash function of a symbol maps to some integer value the corresponding structure is stored there.   Basically on the index of that integer value i have a pointer which points to that structure.
+
+
+Handling Nested Blocks :
+-----------------------
+                 As our language allows nested functions or procedures so to handle these nested blocks i have maintained separate symbol table of separate blocks which may be on same levels or nested. The same hash function is applied here but the difference is that the new symbol table points to its parent symbol table. So when in any expression different variables are used, then first any variable is searched in its block if its found than ok otherwise it is found in its parent block and so on. If it is not found in any block than an error occurs. The same concept is used to enter any variable. 
+    When a new block begins, a new symbol table is made and when the block ends that symbol table is closed.
+
+
+Functions Used :
+---------------
+               The main functions are insert , search , scope_begins and scope_ends. And a hash function is used which a symbol to a unique integer value which is the index of the array. By it we can also handle multiple decleraton of a variable in the same scope. Insert needs two arguments the index of the array and the corresponding record of that symbol. Search only needs the index of the symbol and tells whether that symbol is defined or not. Scope_begins creates a new symbol table and the first entry of the newly created symbol table points to its parent symbol table. And scope_ends tells when to close symbol table.
+
+
+EXAMPLE :
+---------
+
+PROGRAM CHECK;
+	PROCEDURE HELLO1 (A,B : INTEGER);
+		
+		 PROCEDURE HELLO2 (C,D:INTEGER);
+		   VAR A2,B2  INTEGR;
+		   BEGIN
+			WRITE("INHELLO2")
+		   END
+		VAR A3,B3:INEGER;
+		BEGIN
+		    WRITE("INHELLO1")
+		END
+	VAR A4,B4:INTEGER;
+	BEGIN
+	   WRITE("INCHECK")
+	END
+
+
+Building Symbol Table :
+---------------------
+                  First deciding the levels of symbols.
+     
+          Level                   Symbol Name
+           0                       CHECK, HELLO1,A4,B4
+           1                       A,B,HELLO2,A3,B3
+           2                       C,D,A2,B2
+
+Second Types of each symbol
+
+          Symbol                    Type
+          CHECK                      Program 
+          HELLO1                     Procedure
+          A4,B4                      Integer
+          A,B                        Integer
+          HELLO2                     Procedure
+          A3,B3                      Integer
+          C,D,A2,B2                  Integer
+
+Line no. is decided than.
+
+Now The functions are like this---   First hash value is calculated of each sym                                   bol and than that integer value is passed to any function. Here i have taken directly symbol as an argument to function.
+
+Sequence is like this---   scope_begins(),Insert(CHECK),Insert(HELLO1),scope_be                          gins(),Insert(A),Insert(B),Insert(HELLO2),scope_begins(),Insert(C),Insert(D),Insert(A2),Insert(B2),scope_ends(),Insert(A3),Insert(B3).scope_ends(),Insert(A4),Insert(B4),scope_ends();

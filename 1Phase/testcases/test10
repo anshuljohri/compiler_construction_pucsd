@@ -1,0 +1,9 @@
+PROGRAM example;
+ VAR x,y :INTEGER;
+ BEGIN
+IF b=0 
+THEN RETURN a
+ELSE RETURN b
+END
+
+

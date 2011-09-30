@@ -1,0 +1,35 @@
+PROGRAM MINARRRAY;
+	VAR MIN:INTEGER;
+	ARR : ARRAY [1..20] OF INTEGER;
+	PROCEDURE GETDATA (ARR:ARRAY [1..20] OF INTEGER);
+	    VAR I:INTEGER;
+	    BEGIN
+		I:=0;
+		WHILE I<20
+			DO 
+				BEGIN
+					READ(ARR[I]);
+					I:=I+1
+				END
+	    END;
+
+	FUNCTION FINDMIN (ARR:ARRAY[1..20] OF INTEGER):INTEGER;
+		VAR MIN,I:INTEGER;
+			BEGIN
+				I:=0;
+				MIN:=0;
+				WHILE I<20
+					DO 
+						BEGIN
+							IF(MIN>ARR[I])
+								THEN MIN:=I
+								ELSE I:=I+1
+						END;
+						RETURN MIN
+			END;
+
+	BEGIN
+		GETDATA();
+		MIN:=FINDMIN(ARR);
+		WRITE('MIN')
+	END

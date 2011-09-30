@@ -1,0 +1,12 @@
+                    Name     :   Anshul Johri
+                    Roll No. :   2003104
+
+How To Build:   To Build executable file type "make" on command prompt.
+
+Execute The Parser: It  Gives Executable File Named "Nothing".
+
+Known Problems:   Sorry sir yet i havn't handeled the Function and Procedure           identifiers. Except this there is no problem. I have handeled the normal variables. Maintained scope and give errors if any variable is not declared and it is used or if it is out of scope.  
+
+Test Run Results:  Give "make check" on command prompt. It generates                                      "output.txt", which contains the results of testcases.
+
+ 

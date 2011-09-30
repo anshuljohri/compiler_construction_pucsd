@@ -1,0 +1,316 @@
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  example  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  STRUCT  ]
+Token: Identifier   [  anshul  ]
+	STRUCT Type Sanshul Inserted Successfully 
+In Temp STRUCTURE TYPE and counter is 0
+Token: SpecialChars [  (  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  ans  ]
+		IDENTIFIER is ans
+In Temp Inserted Ids and counter is 0 and Id is ans
+In Temp Inserted Ids And  Id is ans
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+		Got In struct Decls Type INTEGER
+		In Insert Member Function Id is ans and Type is INTEGER
+	IN STRUCT MEMBERS TABLE SYMBOL ans Inserted Successfully And its TYPE is INTEGER
+Token: Identifier   [  joh  ]
+		IDENTIFIER is joh
+In Temp Inserted Ids and counter is 0 and Id is joh
+In Temp Inserted Ids And  Id is joh
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+		Got In struct Decls Type FLOAT
+		In Insert Member Function Id is joh and Type is FLOAT
+	IN STRUCT MEMBERS TABLE SYMBOL joh Inserted Successfully And its TYPE is FLOAT
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  STRUCT  ]
+Token: Identifier   [  anuradha  ]
+	STRUCT Type Sanuradha Inserted Successfully 
+In Temp STRUCTURE TYPE and counter is 0
+Token: SpecialChars [  (  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  naveen  ]
+		IDENTIFIER is naveen
+In Temp Inserted Ids and counter is 0 and Id is naveen
+In Temp Inserted Ids And  Id is naveen
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  STRUCT  ]
+Token: Identifier   [  anshul  ]
+	STRUCT TYPE Sanshul Exists in Structure Table
+Token: SpecialChars [  ;  ]
+		Got In struct Decls Type Sanshul
+		In Insert Member Function Id is naveen and Type is Sanshul
+	IN STRUCT MEMBERS TABLE SYMBOL naveen Inserted Successfully And its TYPE is Sanshul
+Token: Identifier   [  an  ]
+		IDENTIFIER is an
+In Temp Inserted Ids and counter is 0 and Id is an
+In Temp Inserted Ids And  Id is an
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+		Got In struct Decls Type INTEGER
+		In Insert Member Function Id is an and Type is INTEGER
+	IN STRUCT MEMBERS TABLE SYMBOL an Inserted Successfully And its TYPE is INTEGER
+Token: Identifier   [  vips  ]
+		IDENTIFIER is vips
+In Temp Inserted Ids and counter is 0 and Id is vips
+In Temp Inserted Ids And  Id is vips
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  3  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  STRUCT  ]
+Token: Identifier   [  anshul  ]
+	STRUCT TYPE Sanshul HAHA Exists in Structure Table
+	In Array Type SYMBOL is Sanshul
+		IN ARRAY TYPE RULE THE TYPE IS ASanshul AND TYPE Sanshul
+ Token: SpecialChars [  ;  ]
+		Got In struct Decls Type ASanshul
+		In Insert Member Function Id is Sanshul and Type is ASanshul
+	IN STRUCT MEMBERS TABLE SYMBOL Sanshul Inserted Successfully And its TYPE is ASanshul
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  prv  ]
+		IDENTIFIER is prv
+In Temp Inserted Ids and counter is 0 and Id is prv
+In Temp Inserted Ids And  Id is prv
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  2  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+		Got Type ArrOFI
+	SYMBOL prv Inserted Successfully IN User Table And its TYPE is ArrOFI
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  z  ]
+		IDENTIFIER is z
+In Temp Inserted Ids and counter is 0 and Id is z
+In Temp Inserted Ids And  Id is z
+	Inserted Temperoray
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  b  ]
+		 IDENTIFIER is b
+In Temp Inserted Ids and counter is 1 and Id is b
+In Temp Inserted Ids And  Id is b
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+In Temp Inserted Types and counter is 0
+In Temp Inserted Types and counter is 1
+	Inserted Types Temporary
+	SYMBOL z Inserted Successfully IN Basic Table And its TYPE is INTEGER
+	SYMBOL b Inserted Successfully IN Basic Table And its TYPE is INTEGER
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  saz  ]
+		IDENTIFIER is saz
+In Temp Inserted Ids and counter is 0 and Id is saz
+In Temp Inserted Ids And  Id is saz
+	Inserted Temperoray
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  vaz  ]
+		 IDENTIFIER is vaz
+In Temp Inserted Ids and counter is 1 and Id is vaz
+In Temp Inserted Ids And  Id is vaz
+	Inserted Temperoray
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+In Temp Inserted Types and counter is 2
+In Temp Inserted Types and counter is 3
+Inserted Types Temporary
+	SYMBOL saz Inserted Successfully IN Basic Table And its TYPE is FLOAT
+	SYMBOL vaz Inserted Successfully IN Basic Table And its TYPE is FLOAT
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+		FUNCTION  IDENTIFIER is gcd
+	SYMBOL gcd Inserted Successfully In the Previous Symbol table And its TYPE is FI
+	Function Identifier gcd Has its 0th Argument Type INTEGER
+	Function Identifier gcd Has its 1th Argument Type INTEGER
+	Function Identifier gcd Has its 2th Argument Type FLOAT
+	Function Identifier gcd Has its 3th Argument Type FLOAT
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  saz  ]
+Token: AssignMent   [  :=  ]
+		In Variable 1st Rule
+		YES Identifier saz is Declared And Its Type is FLOAT
+		identifier saz is a Normal variable
+		YES Identifier saz is Declared And Its Type is FLOAT
+Token: Floatnum       [  12.340000  ]
+		Type FLOAT
+Token: SpecialChars [  ;  ]
+		In Assignment $1 is FLOAT and $3 is 
+		Assignment Type Matched
+ Token: KEYWORD      [  IF  ]
+Token: Identifier   [  b  ]
+Token: RelOp        [  =  ]
+		In Variable 1st Rule
+		YES Identifier b is Declared And Its Type is INTEGER
+		identifier b is a Normal variable
+		YES Identifier b is Declared And Its Type is INTEGER
+Token: Identifier   [  b  ]
+Token: AddOp        [  +  ]
+		In Variable 1st Rule
+		YES Identifier b is Declared And Its Type is INTEGER
+		identifier b is a Normal variable
+		YES Identifier b is Declared And Its Type is INTEGER
+Token: Identifier   [  saz  ]
+Token: KEYWORD      [  THEN  ]
+		In Variable 1st Rule
+		YES Identifier saz is Declared And Its Type is FLOAT
+		identifier saz is a Normal variable
+		YES Identifier saz is Declared And Its Type is FLOAT
+		ERROR: In Expr Op Expr Case TYPE MISMATCHED BOTH SHOULD BE OF SAME TYPE
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  b  ]
+Token: KEYWORD      [  ELSE  ]
+		In Variable 1st Rule
+		YES Identifier b is Declared And Its Type is INTEGER
+		identifier b is a Normal variable
+		YES Identifier b is Declared And Its Type is INTEGER
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+		YES FUNCTION Identifier gcd is Declared And Its Type is FI
+Token: Identifier   [  b  ]
+Token: SpecialChars [  ,  ]
+		In Variable 1st Rule
+		YES Identifier b is Declared And Its Type is INTEGER
+		identifier b is a Normal variable
+		YES Identifier b is Declared And Its Type is INTEGER
+Token: Identifier   [  z  ]
+Token: SpecialChars [  ,  ]
+		In Variable 1st Rule
+		YES Identifier z is Declared And Its Type is INTEGER
+		identifier z is a Normal variable
+		YES Identifier z is Declared And Its Type is INTEGER
+Token: Identifier   [  saz  ]
+Token: KEYWORD      [  MOD  ]
+		In Variable 1st Rule
+		YES Identifier saz is Declared And Its Type is FLOAT
+		identifier saz is a Normal variable
+		YES Identifier saz is Declared And Its Type is FLOAT
+Token: Identifier   [  b  ]
+Token: SpecialChars [  ,  ]
+		In Variable 1st Rule
+		YES Identifier b is Declared And Its Type is INTEGER
+		identifier b is a Normal variable
+		YES Identifier b is Declared And Its Type is INTEGER
+Token: Identifier   [  vaz  ]
+Token: SpecialChars [  )  ]
+		In Variable 1st Rule
+		YES Identifier vaz is Declared And Its Type is FLOAT
+		identifier vaz is a Normal variable
+		YES Identifier vaz is Declared And Its Type is FLOAT
+		In Function gcd No. Of Arguments Are Correct
+	The Type of 0th Argument of the function gcd Is CORRECT
+	The Type of 1th Argument of the function gcd Is CORRECT
+	The Type of 2th Argument of the function gcd Is CORRECT
+	The Type of 3th Argument of the function gcd Is CORRECT
+Token: KEYWORD      [  END  ]
+	CURRENT Scope Symbol Table is Removed
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  )  ]
+		In Variable 1st Rule
+		ERROR: Identifier x is Not Declared 
+		ERROR: Identifier x is Not Declared 
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+		In Variable 1st Rule
+		ERROR: Identifier y is Not Declared 
+		ERROR: Identifier y is Not Declared 
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: RelOp        [  <>  ]
+		In Variable 1st Rule
+		ERROR: Identifier x is Not Declared 
+		ERROR: Identifier x is Not Declared 
+Token: Floatnum       [  0.000000  ]
+		Type FLOAT
+Token: SpecialChars [  )  ]
+		ERROR: In Expr Op Expr Case TYPE MISMATCHED BOTH SHOULD BE OF SAME TYPE
+Token: KEYWORD      [  OR  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: RelOp        [  <>  ]
+		In Variable 1st Rule
+		ERROR: Identifier y is Not Declared 
+		ERROR: Identifier y is Not Declared 
+Token: Floatnum       [  0.000000  ]
+		Type FLOAT
+Token: SpecialChars [  )  ]
+		ERROR: In Expr Op Expr Case TYPE MISMATCHED BOTH SHOULD BE OF SAME TYPE
+Token: KEYWORD      [  DO  ]
+		ERROR: TYPE MISMATCHED In Expr OR Expr ONLY INTEGERs ALLOWED
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+		YES FUNCTION Identifier gcd is Declared And Its Type is FI
+Token: Identifier   [  x  ]
+Token: SpecialChars [  ,  ]
+		In Variable 1st Rule
+		ERROR: Identifier x is Not Declared 
+		ERROR: Identifier x is Not Declared 
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+		In Variable 1st Rule
+		ERROR: Identifier y is Not Declared 
+		ERROR: Identifier y is Not Declared 
+		ERROR: In Function gcd No. Of Arguments Are Wrong
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  )  ]
+		In Variable 1st Rule
+		ERROR: Identifier x is Not Declared 
+		ERROR: Identifier x is Not Declared 
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+		In Variable 1st Rule
+		ERROR: Identifier y is Not Declared 
+		ERROR: Identifier y is Not Declared 
+Token: KEYWORD      [  END  ]
+	CURRENT Scope Symbol Table is Removed
+Token: KEYWORD      [  END  ]
+	CURRENT Scope Symbol Table is Removed
+		----- Correct----- 

@@ -1,0 +1,32 @@
+PROGRAM DEKKER;
+
+VAR flag : ARRAY [0..20] OF INTEGER;
+   turn	 : INTEGER;
+
+BEGIN
+   WHILE (i>=n) AND (turn = i OR flag[turn]=idle)
+      DO
+      flag:=wantin;
+   j:=trurn;
+   
+   WHILE j <> i
+      DO
+      IF flag[j]<>idle
+	 THEN j:=turn{LOOP HERE}
+      ELSE
+	 j:=j+1 MOD n;
+   flag := INCS;
+   j:=0;
+
+   WHILE (j<=n) AND (turn =i OR flag[j]<>INCS)
+      DO
+      j:=j+1;
+      
+      {critical section}
+      j:=turn +1 MOD n;
+   WHILE (flag[j]=idle)
+      DO j:=j+1 MOD n;
+   turn:=j;
+   flag[i]:=idle
+   {remainder of the cycle}
+END

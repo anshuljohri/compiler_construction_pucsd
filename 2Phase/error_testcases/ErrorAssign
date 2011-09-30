@@ -1,0 +1,13 @@
+PROGRAM example;
+ VAR x,y :INTEGER;A,B:FLOAT;
+PROCEDURE FOO(m,n :CHARACTER);
+ BEGIN
+x 0;y:=1;
+b 'c';c:='d'
+END;
+
+BEGIN
+b:=3
+END
+
+

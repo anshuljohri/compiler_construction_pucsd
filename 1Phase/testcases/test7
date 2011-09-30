@@ -1,0 +1,30 @@
+PROGRAM test7;
+	FUNCTION A1(a,b:INTEGER;c:CHARACTER):CHARACTER;
+		PROCEDURE A2(a:FLOAT);
+			VAR d,e:FLOAT;
+			BEGIN
+				d:=7;
+				e:=d;
+				WHILE(d=e) DO
+					BEGIN
+						CASE a OF
+						2.4:WRITE('ad');
+						3.8:WRITE('df')
+						END
+					END;
+				IF(a=d) 
+					THEN IF(b=d)
+						THEN a:=b
+						ELSE b:=d
+			END
+
+	BEGIN
+		WRITE('infunction');
+		A1(c,d,e);
+		RETURN a
+	END;
+	BEGIN
+		WRITE('InProgram')
+        END
+
+

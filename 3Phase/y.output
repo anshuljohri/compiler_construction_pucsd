@@ -1,0 +1,3675 @@
+Terminals which are not used
+
+   CONSTANT
+   MOD
+   "'"
+
+
+Grammar
+
+    0 $accept: Program $end
+
+    1 Program: PROGRAM IDENTIFIER ';' DeclSet SubProgs Block
+    2        | PROGRAM IDENTIFIER error DeclSet SubProgs Block
+    3        | PROGRAM IDENTIFIER ';' SubProgs Block
+    4        | PROGRAM IDENTIFIER error SubProgs Block
+    5        | PROGRAM IDENTIFIER ';' DeclSet Block
+    6        | PROGRAM IDENTIFIER error DeclSet Block
+    7        | PROGRAM IDENTIFIER ';' Block
+    8        | PROGRAM IDENTIFIER error Block
+
+    9 DeclSet: SubProg VAR Decls
+   10        | VAR Decls
+
+   11 Decls: Idents ':' Type ';'
+   12      | Idents error Type ';'
+   13      | Idents ':' Type error
+   14      | Decls Idents ':' Type ';'
+   15      | Decls Idents error Type ';'
+   16      | Decls Idents ':' Type error
+
+   17 Idents: IDENTIFIER
+   18       | Idents ',' IDENTIFIER
+   19       | Idents error IDENTIFIER
+
+   20 Type: StdType
+   21     | ArrayType
+
+   22 StdType: INTEGER
+   23        | FLOAT
+   24        | CHARACTER
+   25        | error
+
+   26 ArrayType: ARRAY '[' Dim ']' OF StdType
+   27          | ARRAY error Dim ']' OF StdType
+   28          | ARRAY '[' Dim error OF StdType
+   29          | ARRAY '[' Dim ']' error StdType
+
+   30 Dim: INTNUM DDOT INTNUM
+   31    | CHARCONST DDOT CHARCONST
+   32    | INTNUM error INTNUM
+   33    | CHARCONST error CHARCONST
+
+   34 SubProgs: SubProgs SubProg ';'
+   35         | SubProgs SubProg error
+   36         | SubProg ';'
+   37         | SubProg error
+
+   38 SubProg: Head DeclSet Block
+   39        | Head Block
+
+   40 Head: FUNCTION IDENTIFIER Args ':' StdType ';'
+   41     | FUNCTION IDENTIFIER Args error StdType ';'
+   42     | FUNCTION IDENTIFIER Args ':' StdType error
+   43     | FUNCTION IDENTIFIER ':' StdType ';'
+   44     | FUNCTION IDENTIFIER error StdType ';'
+   45     | FUNCTION IDENTIFIER ':' StdType error
+   46     | PROCEDURE IDENTIFIER Args ';'
+   47     | PROCEDURE IDENTIFIER Args error
+   48     | PROCEDURE IDENTIFIER ';'
+   49     | PROCEDURE IDENTIFIER error
+
+   50 Args: '(' Params ')'
+   51     | error Params ')'
+   52     | '(' Params error
+
+   53 Params: Idents ':' Type
+   54       | Idents error Type
+   55       | Params ';' Idents ':' Type
+   56       | Params error Idents ':' Type
+   57       | Params ';' Idents error Type
+
+   58 Stmt: Assignment
+   59     | IfStmt
+   60     | WhileStmt
+   61     | CaseStmt
+   62     | Invocation
+   63     | IOStmt
+   64     | Block
+   65     | Return
+
+   66 Assignment: Variable COL Expr
+   67           | Variable error Expr
+
+   68 WhileStmt: WHILE Expr DO Stmt
+   69          | WHILE Expr error Stmt
+
+   70 CaseStmt: CASE Expr OF Cases END
+   71         | CASE Expr error Cases END
+   72         | CASE Expr OF Cases
+   73         | CASE Expr OF END
+   74         | CASE Expr END
+   75         | CASE Expr error
+
+   76 Cases: CaseElt
+   77      | Cases ';' CaseElt
+   78      | Cases error CaseElt
+   79      | Cases ';'
+   80      | Cases error
+   81      | ';' CaseElt
+   82      | error CaseElt
+   83      | ';'
+
+   84 CaseElt: CaseLabels ':' Stmt
+   85        | CaseLabels error Stmt
+
+   86 CaseLabels: Labels
+   87           | CaseLabels ',' Labels
+   88           | CaseLabels error Labels
+
+   89 Labels: INTNUM
+   90       | FLOATNUM
+   91       | CHARCONST
+   92       | error
+
+   93 IfStmt: IF Expr THEN Stmt ELSE Stmt
+   94       | IF Expr error Stmt ELSE Stmt
+   95       | IF Expr THEN Stmt error Stmt
+   96       | IF Expr THEN Stmt
+   97       | IF Expr error Stmt
+
+   98 IOStmt: READ '(' Variable ')'
+   99       | READ error Variable ')'
+  100       | READ '(' Variable error
+  101       | READ '(' error ')'
+  102       | WRITE '(' Expr ')'
+  103       | WRITE error Expr ')'
+  104       | WRITE '(' Expr error
+  105       | WRITE '(' STRINGCONSTANT ')'
+
+  106 Invocation: IDENTIFIER '(' ')'
+  107           | IDENTIFIER '(' Exprs ')'
+  108           | error Exprs ')'
+  109           | IDENTIFIER '(' Exprs error
+
+  110 Block: Begin Stmts END
+  111      | Begin Stmts error
+
+  112 Stmts: Stmt
+  113      | Stmts ';' Stmt
+  114      | Stmts error Stmt
+
+  115 Return: RETURN Expr
+
+  116 Exprs: Expr
+  117      | Exprs ',' Expr
+  118      | Exprs error Expr
+
+  119 Expr: Expr RelOp Expr
+  120     | Expr AddOp Expr
+  121     | Expr OR Expr
+  122     | Expr AND Expr
+  123     | Expr MulOp Expr
+  124     | NOT Expr
+  125     | Factor
+
+  126 Factor: Variable
+  127       | INTNUM
+  128       | FLOATNUM
+  129       | CHARCONST
+  130       | STRINGCONSTANT
+  131       | '(' Expr ')'
+  132       | error ')'
+  133       | '(' Expr error
+  134       | Function
+
+  135 Variable: IDENTIFIER
+  136         | IDENTIFIER '[' Expr ']'
+  137         | error Expr ']'
+  138         | IDENTIFIER '[' Expr error
+
+  139 Function: IDENTIFIER '(' ')'
+  140         | IDENTIFIER '(' Exprs ')'
+  141         | error Exprs ')'
+  142         | IDENTIFIER '(' Exprs error
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 50 52 98 100 101 102 104 105 106 107 109 131 133 139 140 142
+')' (41) 50 51 98 99 101 102 103 105 106 107 108 131 132 139 140 141
+',' (44) 18 87 117
+':' (58) 11 13 14 16 40 42 43 45 53 55 56 84
+';' (59) 1 3 5 7 11 12 14 15 34 36 40 41 43 44 46 48 55 57 77 79 81
+    83 113
+'[' (91) 26 28 29 136 138
+']' (93) 26 27 29 136 137
+error (256) 2 4 6 8 12 13 15 16 19 25 27 28 29 32 33 35 37 41 42 44
+    45 47 49 51 52 54 56 57 67 69 71 75 78 80 82 85 88 92 94 95 97
+    99 100 101 103 104 108 109 111 114 118 132 133 137 138 141 142
+AND (258) 122
+ARRAY (259) 26 27 28 29
+Begin (260) 110 111
+CASE (261) 70 71 72 73 74 75
+CHARACTER (262) 24
+CONSTANT (263)
+DO (264) 68
+ELSE (265) 93 94
+END (266) 70 71 73 74 110
+FLOAT (267) 23
+FUNCTION (268) 40 41 42 43 44 45
+IDENTIFIER (269) 1 2 3 4 5 6 7 8 17 18 19 40 41 42 43 44 45 46 47 48
+    49 106 107 109 135 136 138 139 140 142
+IF (270) 93 94 95 96 97
+INTEGER (271) 22
+INTNUM (272) 30 32 89 127
+FLOATNUM (273) 90 128
+CHARCONST (274) 31 33 91 129
+RelOp (275) 119
+AddOp (276) 120
+MulOp (277) 123
+MOD (278)
+NOT (279) 124
+OF (280) 26 27 28 70 72 73
+OR (281) 121
+PROCEDURE (282) 46 47 48 49
+PROGRAM (283) 1 2 3 4 5 6 7 8
+READ (284) 98 99 100 101
+RETURN (285) 115
+STRINGCONSTANT (286) 105 130
+THEN (287) 93 95 96
+VAR (288) 9 10
+WHILE (289) 68 69
+WRITE (290) 102 103 104 105
+COL (291) 66
+DDOT (292) 30 31
+"'" (293)
+
+
+Nonterminals, with rules where they appear
+
+$accept (46)
+    on left: 0
+Program (47)
+    on left: 1 2 3 4 5 6 7 8, on right: 0
+DeclSet (48)
+    on left: 9 10, on right: 1 2 5 6 38
+Decls (49)
+    on left: 11 12 13 14 15 16, on right: 9 10 14 15 16
+Idents (50)
+    on left: 17 18 19, on right: 11 12 13 14 15 16 18 19 53 54 55 56
+    57
+Type (51)
+    on left: 20 21, on right: 11 12 13 14 15 16 53 54 55 56 57
+StdType (52)
+    on left: 22 23 24 25, on right: 20 26 27 28 29 40 41 42 43 44 45
+ArrayType (53)
+    on left: 26 27 28 29, on right: 21
+Dim (54)
+    on left: 30 31 32 33, on right: 26 27 28 29
+SubProgs (55)
+    on left: 34 35 36 37, on right: 1 2 3 4 34 35
+SubProg (56)
+    on left: 38 39, on right: 9 34 35 36 37
+Head (57)
+    on left: 40 41 42 43 44 45 46 47 48 49, on right: 38 39
+Args (58)
+    on left: 50 51 52, on right: 40 41 42 46 47
+Params (59)
+    on left: 53 54 55 56 57, on right: 50 51 52 55 56 57
+Stmt (60)
+    on left: 58 59 60 61 62 63 64 65, on right: 68 69 84 85 93 94 95
+    96 97 112 113 114
+Assignment (61)
+    on left: 66 67, on right: 58
+WhileStmt (62)
+    on left: 68 69, on right: 60
+CaseStmt (63)
+    on left: 70 71 72 73 74 75, on right: 61
+Cases (64)
+    on left: 76 77 78 79 80 81 82 83, on right: 70 71 72 77 78 79 80
+CaseElt (65)
+    on left: 84 85, on right: 76 77 78 81 82
+CaseLabels (66)
+    on left: 86 87 88, on right: 84 85 87 88
+Labels (67)
+    on left: 89 90 91 92, on right: 86 87 88
+IfStmt (68)
+    on left: 93 94 95 96 97, on right: 59
+IOStmt (69)
+    on left: 98 99 100 101 102 103 104 105, on right: 63
+Invocation (70)
+    on left: 106 107 108 109, on right: 62
+Block (71)
+    on left: 110 111, on right: 1 2 3 4 5 6 7 8 38 39 64
+Stmts (72)
+    on left: 112 113 114, on right: 110 111 113 114
+Return (73)
+    on left: 115, on right: 65
+Exprs (74)
+    on left: 116 117 118, on right: 107 108 109 117 118 140 141 142
+Expr (75)
+    on left: 119 120 121 122 123 124 125, on right: 66 67 68 69 70
+    71 72 73 74 75 93 94 95 96 97 102 103 104 115 116 117 118 119 120
+    121 122 123 124 131 133 136 137 138
+Factor (76)
+    on left: 126 127 128 129 130 131 132 133 134, on right: 125
+Variable (77)
+    on left: 135 136 137 138, on right: 66 67 98 99 100 126
+Function (78)
+    on left: 139 140 141 142, on right: 134
+
+
+state 0
+
+    0 $accept: . Program $end
+
+    PROGRAM  shift, and go to state 1
+
+    Program  go to state 2
+
+
+state 1
+
+    1 Program: PROGRAM . IDENTIFIER ';' DeclSet SubProgs Block
+    2        | PROGRAM . IDENTIFIER error DeclSet SubProgs Block
+    3        | PROGRAM . IDENTIFIER ';' SubProgs Block
+    4        | PROGRAM . IDENTIFIER error SubProgs Block
+    5        | PROGRAM . IDENTIFIER ';' DeclSet Block
+    6        | PROGRAM . IDENTIFIER error DeclSet Block
+    7        | PROGRAM . IDENTIFIER ';' Block
+    8        | PROGRAM . IDENTIFIER error Block
+
+    IDENTIFIER  shift, and go to state 3
+
+
+state 2
+
+    0 $accept: Program . $end
+
+    $end  shift, and go to state 4
+
+
+state 3
+
+    1 Program: PROGRAM IDENTIFIER . ';' DeclSet SubProgs Block
+    2        | PROGRAM IDENTIFIER . error DeclSet SubProgs Block
+    3        | PROGRAM IDENTIFIER . ';' SubProgs Block
+    4        | PROGRAM IDENTIFIER . error SubProgs Block
+    5        | PROGRAM IDENTIFIER . ';' DeclSet Block
+    6        | PROGRAM IDENTIFIER . error DeclSet Block
+    7        | PROGRAM IDENTIFIER . ';' Block
+    8        | PROGRAM IDENTIFIER . error Block
+
+    error  shift, and go to state 5
+    ';'    shift, and go to state 6
+
+
+state 4
+
+    0 $accept: Program $end .
+
+    $default  accept
+
+
+state 5
+
+    2 Program: PROGRAM IDENTIFIER error . DeclSet SubProgs Block
+    4        | PROGRAM IDENTIFIER error . SubProgs Block
+    6        | PROGRAM IDENTIFIER error . DeclSet Block
+    8        | PROGRAM IDENTIFIER error . Block
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+    VAR        shift, and go to state 10
+
+    DeclSet   go to state 11
+    SubProgs  go to state 12
+    SubProg   go to state 13
+    Head      go to state 14
+    Block     go to state 15
+
+
+state 6
+
+    1 Program: PROGRAM IDENTIFIER ';' . DeclSet SubProgs Block
+    3        | PROGRAM IDENTIFIER ';' . SubProgs Block
+    5        | PROGRAM IDENTIFIER ';' . DeclSet Block
+    7        | PROGRAM IDENTIFIER ';' . Block
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+    VAR        shift, and go to state 10
+
+    DeclSet   go to state 16
+    SubProgs  go to state 17
+    SubProg   go to state 13
+    Head      go to state 14
+    Block     go to state 18
+
+
+state 7
+
+  110 Block: Begin . Stmts END
+  111      | Begin . Stmts error
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 27
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Stmts       go to state 35
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 8
+
+   40 Head: FUNCTION . IDENTIFIER Args ':' StdType ';'
+   41     | FUNCTION . IDENTIFIER Args error StdType ';'
+   42     | FUNCTION . IDENTIFIER Args ':' StdType error
+   43     | FUNCTION . IDENTIFIER ':' StdType ';'
+   44     | FUNCTION . IDENTIFIER error StdType ';'
+   45     | FUNCTION . IDENTIFIER ':' StdType error
+
+    IDENTIFIER  shift, and go to state 38
+
+
+state 9
+
+   46 Head: PROCEDURE . IDENTIFIER Args ';'
+   47     | PROCEDURE . IDENTIFIER Args error
+   48     | PROCEDURE . IDENTIFIER ';'
+   49     | PROCEDURE . IDENTIFIER error
+
+    IDENTIFIER  shift, and go to state 39
+
+
+state 10
+
+   10 DeclSet: VAR . Decls
+
+    IDENTIFIER  shift, and go to state 40
+
+    Decls   go to state 41
+    Idents  go to state 42
+
+
+state 11
+
+    2 Program: PROGRAM IDENTIFIER error DeclSet . SubProgs Block
+    6        | PROGRAM IDENTIFIER error DeclSet . Block
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+
+    SubProgs  go to state 43
+    SubProg   go to state 44
+    Head      go to state 14
+    Block     go to state 45
+
+
+state 12
+
+    4 Program: PROGRAM IDENTIFIER error SubProgs . Block
+   34 SubProgs: SubProgs . SubProg ';'
+   35         | SubProgs . SubProg error
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+
+    SubProg  go to state 46
+    Head     go to state 14
+    Block    go to state 47
+
+
+state 13
+
+    9 DeclSet: SubProg . VAR Decls
+   36 SubProgs: SubProg . ';'
+   37         | SubProg . error
+
+    error  shift, and go to state 48
+    VAR    shift, and go to state 49
+    ';'    shift, and go to state 50
+
+
+state 14
+
+   38 SubProg: Head . DeclSet Block
+   39        | Head . Block
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+    VAR        shift, and go to state 10
+
+    DeclSet  go to state 51
+    SubProg  go to state 52
+    Head     go to state 14
+    Block    go to state 53
+
+
+state 15
+
+    8 Program: PROGRAM IDENTIFIER error Block .
+
+    $default  reduce using rule 8 (Program)
+
+
+state 16
+
+    1 Program: PROGRAM IDENTIFIER ';' DeclSet . SubProgs Block
+    5        | PROGRAM IDENTIFIER ';' DeclSet . Block
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+
+    SubProgs  go to state 54
+    SubProg   go to state 44
+    Head      go to state 14
+    Block     go to state 55
+
+
+state 17
+
+    3 Program: PROGRAM IDENTIFIER ';' SubProgs . Block
+   34 SubProgs: SubProgs . SubProg ';'
+   35         | SubProgs . SubProg error
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+
+    SubProg  go to state 46
+    Head     go to state 14
+    Block    go to state 56
+
+
+state 18
+
+    7 Program: PROGRAM IDENTIFIER ';' Block .
+
+    $default  reduce using rule 7 (Program)
+
+
+state 19
+
+  108 Invocation: error . Exprs ')'
+  137 Variable: error . Expr ']'
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Exprs     go to state 65
+    Expr      go to state 66
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 20
+
+   70 CaseStmt: CASE . Expr OF Cases END
+   71         | CASE . Expr error Cases END
+   72         | CASE . Expr OF Cases
+   73         | CASE . Expr OF END
+   74         | CASE . Expr END
+   75         | CASE . Expr error
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 70
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 21
+
+  106 Invocation: IDENTIFIER . '(' ')'
+  107           | IDENTIFIER . '(' Exprs ')'
+  109           | IDENTIFIER . '(' Exprs error
+  135 Variable: IDENTIFIER .
+  136         | IDENTIFIER . '[' Expr ']'
+  138         | IDENTIFIER . '[' Expr error
+
+    '('  shift, and go to state 71
+    '['  shift, and go to state 72
+
+    $default  reduce using rule 135 (Variable)
+
+
+state 22
+
+   93 IfStmt: IF . Expr THEN Stmt ELSE Stmt
+   94       | IF . Expr error Stmt ELSE Stmt
+   95       | IF . Expr THEN Stmt error Stmt
+   96       | IF . Expr THEN Stmt
+   97       | IF . Expr error Stmt
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 73
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 23
+
+   98 IOStmt: READ . '(' Variable ')'
+   99       | READ . error Variable ')'
+  100       | READ . '(' Variable error
+  101       | READ . '(' error ')'
+
+    error  shift, and go to state 74
+    '('    shift, and go to state 75
+
+
+state 24
+
+  115 Return: RETURN . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 76
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 25
+
+   68 WhileStmt: WHILE . Expr DO Stmt
+   69          | WHILE . Expr error Stmt
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 77
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 26
+
+  102 IOStmt: WRITE . '(' Expr ')'
+  103       | WRITE . error Expr ')'
+  104       | WRITE . '(' Expr error
+  105       | WRITE . '(' STRINGCONSTANT ')'
+
+    error  shift, and go to state 78
+    '('    shift, and go to state 79
+
+
+state 27
+
+  112 Stmts: Stmt .
+
+    $default  reduce using rule 112 (Stmts)
+
+
+state 28
+
+   58 Stmt: Assignment .
+
+    $default  reduce using rule 58 (Stmt)
+
+
+state 29
+
+   60 Stmt: WhileStmt .
+
+    $default  reduce using rule 60 (Stmt)
+
+
+state 30
+
+   61 Stmt: CaseStmt .
+
+    $default  reduce using rule 61 (Stmt)
+
+
+state 31
+
+   59 Stmt: IfStmt .
+
+    $default  reduce using rule 59 (Stmt)
+
+
+state 32
+
+   63 Stmt: IOStmt .
+
+    $default  reduce using rule 63 (Stmt)
+
+
+state 33
+
+   62 Stmt: Invocation .
+
+    $default  reduce using rule 62 (Stmt)
+
+
+state 34
+
+   64 Stmt: Block .
+
+    $default  reduce using rule 64 (Stmt)
+
+
+state 35
+
+  110 Block: Begin Stmts . END
+  111      | Begin Stmts . error
+  113 Stmts: Stmts . ';' Stmt
+  114      | Stmts . error Stmt
+
+    error  shift, and go to state 80
+    END    shift, and go to state 81
+    ';'    shift, and go to state 82
+
+
+state 36
+
+   65 Stmt: Return .
+
+    $default  reduce using rule 65 (Stmt)
+
+
+state 37
+
+   66 Assignment: Variable . COL Expr
+   67           | Variable . error Expr
+
+    error  shift, and go to state 83
+    COL    shift, and go to state 84
+
+
+state 38
+
+   40 Head: FUNCTION IDENTIFIER . Args ':' StdType ';'
+   41     | FUNCTION IDENTIFIER . Args error StdType ';'
+   42     | FUNCTION IDENTIFIER . Args ':' StdType error
+   43     | FUNCTION IDENTIFIER . ':' StdType ';'
+   44     | FUNCTION IDENTIFIER . error StdType ';'
+   45     | FUNCTION IDENTIFIER . ':' StdType error
+
+    error  shift, and go to state 85
+    '('    shift, and go to state 86
+    ':'    shift, and go to state 87
+
+    Args  go to state 88
+
+
+state 39
+
+   46 Head: PROCEDURE IDENTIFIER . Args ';'
+   47     | PROCEDURE IDENTIFIER . Args error
+   48     | PROCEDURE IDENTIFIER . ';'
+   49     | PROCEDURE IDENTIFIER . error
+
+    error  shift, and go to state 89
+    ';'    shift, and go to state 90
+    '('    shift, and go to state 86
+
+    Args  go to state 91
+
+
+state 40
+
+   17 Idents: IDENTIFIER .
+
+    $default  reduce using rule 17 (Idents)
+
+
+state 41
+
+   10 DeclSet: VAR Decls .
+   14 Decls: Decls . Idents ':' Type ';'
+   15      | Decls . Idents error Type ';'
+   16      | Decls . Idents ':' Type error
+
+    IDENTIFIER  shift, and go to state 40
+
+    $default  reduce using rule 10 (DeclSet)
+
+    Idents  go to state 92
+
+
+state 42
+
+   11 Decls: Idents . ':' Type ';'
+   12      | Idents . error Type ';'
+   13      | Idents . ':' Type error
+   18 Idents: Idents . ',' IDENTIFIER
+   19       | Idents . error IDENTIFIER
+
+    error  shift, and go to state 93
+    ','    shift, and go to state 94
+    ':'    shift, and go to state 95
+
+
+state 43
+
+    2 Program: PROGRAM IDENTIFIER error DeclSet SubProgs . Block
+   34 SubProgs: SubProgs . SubProg ';'
+   35         | SubProgs . SubProg error
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+
+    SubProg  go to state 46
+    Head     go to state 14
+    Block    go to state 96
+
+
+state 44
+
+   36 SubProgs: SubProg . ';'
+   37         | SubProg . error
+
+    error  shift, and go to state 48
+    ';'    shift, and go to state 50
+
+
+state 45
+
+    6 Program: PROGRAM IDENTIFIER error DeclSet Block .
+
+    $default  reduce using rule 6 (Program)
+
+
+state 46
+
+   34 SubProgs: SubProgs SubProg . ';'
+   35         | SubProgs SubProg . error
+
+    error  shift, and go to state 97
+    ';'    shift, and go to state 98
+
+
+state 47
+
+    4 Program: PROGRAM IDENTIFIER error SubProgs Block .
+
+    $default  reduce using rule 4 (Program)
+
+
+state 48
+
+   37 SubProgs: SubProg error .
+
+    $default  reduce using rule 37 (SubProgs)
+
+
+state 49
+
+    9 DeclSet: SubProg VAR . Decls
+
+    IDENTIFIER  shift, and go to state 40
+
+    Decls   go to state 99
+    Idents  go to state 42
+
+
+state 50
+
+   36 SubProgs: SubProg ';' .
+
+    $default  reduce using rule 36 (SubProgs)
+
+
+state 51
+
+   38 SubProg: Head DeclSet . Block
+
+    Begin  shift, and go to state 7
+
+    Block  go to state 100
+
+
+state 52
+
+    9 DeclSet: SubProg . VAR Decls
+
+    VAR  shift, and go to state 49
+
+
+state 53
+
+   39 SubProg: Head Block .
+
+    $default  reduce using rule 39 (SubProg)
+
+
+state 54
+
+    1 Program: PROGRAM IDENTIFIER ';' DeclSet SubProgs . Block
+   34 SubProgs: SubProgs . SubProg ';'
+   35         | SubProgs . SubProg error
+
+    Begin      shift, and go to state 7
+    FUNCTION   shift, and go to state 8
+    PROCEDURE  shift, and go to state 9
+
+    SubProg  go to state 46
+    Head     go to state 14
+    Block    go to state 101
+
+
+state 55
+
+    5 Program: PROGRAM IDENTIFIER ';' DeclSet Block .
+
+    $default  reduce using rule 5 (Program)
+
+
+state 56
+
+    3 Program: PROGRAM IDENTIFIER ';' SubProgs Block .
+
+    $default  reduce using rule 3 (Program)
+
+
+state 57
+
+  132 Factor: error . ')'
+  137 Variable: error . Expr ']'
+  141 Function: error . Exprs ')'
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+    ')'             shift, and go to state 102
+
+    Exprs     go to state 103
+    Expr      go to state 66
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 58
+
+  135 Variable: IDENTIFIER .
+  136         | IDENTIFIER . '[' Expr ']'
+  138         | IDENTIFIER . '[' Expr error
+  139 Function: IDENTIFIER . '(' ')'
+  140         | IDENTIFIER . '(' Exprs ')'
+  142         | IDENTIFIER . '(' Exprs error
+
+    '('  shift, and go to state 104
+    '['  shift, and go to state 72
+
+    $default  reduce using rule 135 (Variable)
+
+
+state 59
+
+  127 Factor: INTNUM .
+
+    $default  reduce using rule 127 (Factor)
+
+
+state 60
+
+  128 Factor: FLOATNUM .
+
+    $default  reduce using rule 128 (Factor)
+
+
+state 61
+
+  129 Factor: CHARCONST .
+
+    $default  reduce using rule 129 (Factor)
+
+
+state 62
+
+  124 Expr: NOT . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 105
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 63
+
+  130 Factor: STRINGCONSTANT .
+
+    $default  reduce using rule 130 (Factor)
+
+
+state 64
+
+  131 Factor: '(' . Expr ')'
+  133       | '(' . Expr error
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 106
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 65
+
+  108 Invocation: error Exprs . ')'
+  117 Exprs: Exprs . ',' Expr
+  118      | Exprs . error Expr
+
+    error  shift, and go to state 107
+    ','    shift, and go to state 108
+    ')'    shift, and go to state 109
+
+
+state 66
+
+  116 Exprs: Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+  137 Variable: error Expr . ']'
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    ']'    shift, and go to state 115
+
+    $default  reduce using rule 116 (Exprs)
+
+
+state 67
+
+  125 Expr: Factor .
+
+    $default  reduce using rule 125 (Expr)
+
+
+state 68
+
+  126 Factor: Variable .
+
+    $default  reduce using rule 126 (Factor)
+
+
+state 69
+
+  134 Factor: Function .
+
+    $default  reduce using rule 134 (Factor)
+
+
+state 70
+
+   70 CaseStmt: CASE Expr . OF Cases END
+   71         | CASE Expr . error Cases END
+   72         | CASE Expr . OF Cases
+   73         | CASE Expr . OF END
+   74         | CASE Expr . END
+   75         | CASE Expr . error
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    error  shift, and go to state 116
+    AND    shift, and go to state 110
+    END    shift, and go to state 117
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OF     shift, and go to state 118
+    OR     shift, and go to state 114
+
+
+state 71
+
+  106 Invocation: IDENTIFIER '(' . ')'
+  107           | IDENTIFIER '(' . Exprs ')'
+  109           | IDENTIFIER '(' . Exprs error
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+    ')'             shift, and go to state 119
+
+    Exprs     go to state 120
+    Expr      go to state 121
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 72
+
+  136 Variable: IDENTIFIER '[' . Expr ']'
+  138         | IDENTIFIER '[' . Expr error
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 122
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 73
+
+   93 IfStmt: IF Expr . THEN Stmt ELSE Stmt
+   94       | IF Expr . error Stmt ELSE Stmt
+   95       | IF Expr . THEN Stmt error Stmt
+   96       | IF Expr . THEN Stmt
+   97       | IF Expr . error Stmt
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    error  shift, and go to state 123
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    THEN   shift, and go to state 124
+
+
+state 74
+
+   99 IOStmt: READ error . Variable ')'
+
+    error       shift, and go to state 125
+    IDENTIFIER  shift, and go to state 126
+
+    Variable  go to state 127
+
+
+state 75
+
+   98 IOStmt: READ '(' . Variable ')'
+  100       | READ '(' . Variable error
+  101       | READ '(' . error ')'
+
+    error       shift, and go to state 128
+    IDENTIFIER  shift, and go to state 126
+
+    Variable  go to state 129
+
+
+state 76
+
+  115 Return: RETURN Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+    $default  reduce using rule 115 (Return)
+
+
+state 77
+
+   68 WhileStmt: WHILE Expr . DO Stmt
+   69          | WHILE Expr . error Stmt
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    error  shift, and go to state 130
+    AND    shift, and go to state 110
+    DO     shift, and go to state 131
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+
+state 78
+
+  103 IOStmt: WRITE error . Expr ')'
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 132
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 79
+
+  102 IOStmt: WRITE '(' . Expr ')'
+  104       | WRITE '(' . Expr error
+  105       | WRITE '(' . STRINGCONSTANT ')'
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 133
+    '('             shift, and go to state 64
+
+    Expr      go to state 134
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 80
+
+  111 Block: Begin Stmts error .
+  114 Stmts: Stmts error . Stmt
+
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 111 (Block)
+
+    Stmt        go to state 135
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 81
+
+  110 Block: Begin Stmts END .
+
+    $default  reduce using rule 110 (Block)
+
+
+state 82
+
+  113 Stmts: Stmts ';' . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 136
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 83
+
+   67 Assignment: Variable error . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 137
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 84
+
+   66 Assignment: Variable COL . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 138
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 85
+
+   44 Head: FUNCTION IDENTIFIER error . StdType ';'
+   51 Args: error . Params ')'
+
+    error       shift, and go to state 139
+    CHARACTER   shift, and go to state 140
+    FLOAT       shift, and go to state 141
+    IDENTIFIER  shift, and go to state 40
+    INTEGER     shift, and go to state 142
+
+    Idents   go to state 143
+    StdType  go to state 144
+    Params   go to state 145
+
+
+state 86
+
+   50 Args: '(' . Params ')'
+   52     | '(' . Params error
+
+    IDENTIFIER  shift, and go to state 40
+
+    Idents  go to state 143
+    Params  go to state 146
+
+
+state 87
+
+   43 Head: FUNCTION IDENTIFIER ':' . StdType ';'
+   45     | FUNCTION IDENTIFIER ':' . StdType error
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 147
+
+
+state 88
+
+   40 Head: FUNCTION IDENTIFIER Args . ':' StdType ';'
+   41     | FUNCTION IDENTIFIER Args . error StdType ';'
+   42     | FUNCTION IDENTIFIER Args . ':' StdType error
+
+    error  shift, and go to state 148
+    ':'    shift, and go to state 149
+
+
+state 89
+
+   49 Head: PROCEDURE IDENTIFIER error .
+   51 Args: error . Params ')'
+
+    IDENTIFIER  shift, and go to state 40
+
+    $default  reduce using rule 49 (Head)
+
+    Idents  go to state 143
+    Params  go to state 145
+
+
+state 90
+
+   48 Head: PROCEDURE IDENTIFIER ';' .
+
+    $default  reduce using rule 48 (Head)
+
+
+state 91
+
+   46 Head: PROCEDURE IDENTIFIER Args . ';'
+   47     | PROCEDURE IDENTIFIER Args . error
+
+    error  shift, and go to state 150
+    ';'    shift, and go to state 151
+
+
+state 92
+
+   14 Decls: Decls Idents . ':' Type ';'
+   15      | Decls Idents . error Type ';'
+   16      | Decls Idents . ':' Type error
+   18 Idents: Idents . ',' IDENTIFIER
+   19       | Idents . error IDENTIFIER
+
+    error  shift, and go to state 152
+    ','    shift, and go to state 94
+    ':'    shift, and go to state 153
+
+
+state 93
+
+   12 Decls: Idents error . Type ';'
+   19 Idents: Idents error . IDENTIFIER
+
+    error       shift, and go to state 139
+    ARRAY       shift, and go to state 154
+    CHARACTER   shift, and go to state 140
+    FLOAT       shift, and go to state 141
+    IDENTIFIER  shift, and go to state 155
+    INTEGER     shift, and go to state 142
+
+    Type       go to state 156
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 94
+
+   18 Idents: Idents ',' . IDENTIFIER
+
+    IDENTIFIER  shift, and go to state 159
+
+
+state 95
+
+   11 Decls: Idents ':' . Type ';'
+   13      | Idents ':' . Type error
+
+    error      shift, and go to state 139
+    ARRAY      shift, and go to state 154
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    Type       go to state 160
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 96
+
+    2 Program: PROGRAM IDENTIFIER error DeclSet SubProgs Block .
+
+    $default  reduce using rule 2 (Program)
+
+
+state 97
+
+   35 SubProgs: SubProgs SubProg error .
+
+    $default  reduce using rule 35 (SubProgs)
+
+
+state 98
+
+   34 SubProgs: SubProgs SubProg ';' .
+
+    $default  reduce using rule 34 (SubProgs)
+
+
+state 99
+
+    9 DeclSet: SubProg VAR Decls .
+   14 Decls: Decls . Idents ':' Type ';'
+   15      | Decls . Idents error Type ';'
+   16      | Decls . Idents ':' Type error
+
+    IDENTIFIER  shift, and go to state 40
+
+    $default  reduce using rule 9 (DeclSet)
+
+    Idents  go to state 92
+
+
+state 100
+
+   38 SubProg: Head DeclSet Block .
+
+    $default  reduce using rule 38 (SubProg)
+
+
+state 101
+
+    1 Program: PROGRAM IDENTIFIER ';' DeclSet SubProgs Block .
+
+    $default  reduce using rule 1 (Program)
+
+
+state 102
+
+  132 Factor: error ')' .
+
+    $default  reduce using rule 132 (Factor)
+
+
+state 103
+
+  117 Exprs: Exprs . ',' Expr
+  118      | Exprs . error Expr
+  141 Function: error Exprs . ')'
+
+    error  shift, and go to state 107
+    ','    shift, and go to state 108
+    ')'    shift, and go to state 161
+
+
+state 104
+
+  139 Function: IDENTIFIER '(' . ')'
+  140         | IDENTIFIER '(' . Exprs ')'
+  142         | IDENTIFIER '(' . Exprs error
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+    ')'             shift, and go to state 162
+
+    Exprs     go to state 163
+    Expr      go to state 121
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 105
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+  124     | NOT Expr .
+
+    $default  reduce using rule 124 (Expr)
+
+
+state 106
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+  131 Factor: '(' Expr . ')'
+  133       | '(' Expr . error
+
+    error  shift, and go to state 164
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    ')'    shift, and go to state 165
+
+
+state 107
+
+  118 Exprs: Exprs error . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 166
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 108
+
+  117 Exprs: Exprs ',' . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 167
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 109
+
+  108 Invocation: error Exprs ')' .
+
+    $default  reduce using rule 108 (Invocation)
+
+
+state 110
+
+  122 Expr: Expr AND . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 168
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 111
+
+  119 Expr: Expr RelOp . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 169
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 112
+
+  120 Expr: Expr AddOp . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 170
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 113
+
+  123 Expr: Expr MulOp . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 171
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 114
+
+  121 Expr: Expr OR . Expr
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 172
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 115
+
+  137 Variable: error Expr ']' .
+
+    $default  reduce using rule 137 (Variable)
+
+
+state 116
+
+   71 CaseStmt: CASE Expr error . Cases END
+   75         | CASE Expr error .
+
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+
+    $default  reduce using rule 75 (CaseStmt)
+
+    Cases       go to state 178
+    CaseElt     go to state 179
+    CaseLabels  go to state 180
+    Labels      go to state 181
+
+
+state 117
+
+   74 CaseStmt: CASE Expr END .
+
+    $default  reduce using rule 74 (CaseStmt)
+
+
+state 118
+
+   70 CaseStmt: CASE Expr OF . Cases END
+   72         | CASE Expr OF . Cases
+   73         | CASE Expr OF . END
+
+    error      shift, and go to state 173
+    END        shift, and go to state 182
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+    ';'        shift, and go to state 177
+
+    Cases       go to state 183
+    CaseElt     go to state 179
+    CaseLabels  go to state 180
+    Labels      go to state 181
+
+
+state 119
+
+  106 Invocation: IDENTIFIER '(' ')' .
+
+    $default  reduce using rule 106 (Invocation)
+
+
+state 120
+
+  107 Invocation: IDENTIFIER '(' Exprs . ')'
+  109           | IDENTIFIER '(' Exprs . error
+  117 Exprs: Exprs . ',' Expr
+  118      | Exprs . error Expr
+
+    error  shift, and go to state 184
+    ','    shift, and go to state 108
+    ')'    shift, and go to state 185
+
+
+state 121
+
+  116 Exprs: Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+    $default  reduce using rule 116 (Exprs)
+
+
+state 122
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+  136 Variable: IDENTIFIER '[' Expr . ']'
+  138         | IDENTIFIER '[' Expr . error
+
+    error  shift, and go to state 186
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    ']'    shift, and go to state 187
+
+
+state 123
+
+   94 IfStmt: IF Expr error . Stmt ELSE Stmt
+   97       | IF Expr error . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 188
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 124
+
+   93 IfStmt: IF Expr THEN . Stmt ELSE Stmt
+   95       | IF Expr THEN . Stmt error Stmt
+   96       | IF Expr THEN . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 189
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 125
+
+  137 Variable: error . Expr ']'
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    Expr      go to state 190
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 126
+
+  135 Variable: IDENTIFIER .
+  136         | IDENTIFIER . '[' Expr ']'
+  138         | IDENTIFIER . '[' Expr error
+
+    '['  shift, and go to state 72
+
+    $default  reduce using rule 135 (Variable)
+
+
+state 127
+
+   99 IOStmt: READ error Variable . ')'
+
+    ')'  shift, and go to state 191
+
+
+state 128
+
+  101 IOStmt: READ '(' error . ')'
+  137 Variable: error . Expr ']'
+
+    error           shift, and go to state 57
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+    ')'             shift, and go to state 192
+
+    Expr      go to state 190
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 129
+
+   98 IOStmt: READ '(' Variable . ')'
+  100       | READ '(' Variable . error
+
+    error  shift, and go to state 193
+    ')'    shift, and go to state 194
+
+
+state 130
+
+   69 WhileStmt: WHILE Expr error . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 195
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 131
+
+   68 WhileStmt: WHILE Expr DO . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 196
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 132
+
+  103 IOStmt: WRITE error Expr . ')'
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    ')'    shift, and go to state 197
+
+
+state 133
+
+  105 IOStmt: WRITE '(' STRINGCONSTANT . ')'
+  130 Factor: STRINGCONSTANT .
+
+    ')'  shift, and go to state 198
+
+    $default  reduce using rule 130 (Factor)
+
+
+state 134
+
+  102 IOStmt: WRITE '(' Expr . ')'
+  104       | WRITE '(' Expr . error
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    error  shift, and go to state 199
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    ')'    shift, and go to state 200
+
+
+state 135
+
+  114 Stmts: Stmts error Stmt .
+
+    $default  reduce using rule 114 (Stmts)
+
+
+state 136
+
+  113 Stmts: Stmts ';' Stmt .
+
+    $default  reduce using rule 113 (Stmts)
+
+
+state 137
+
+   67 Assignment: Variable error Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+    $default  reduce using rule 67 (Assignment)
+
+
+state 138
+
+   66 Assignment: Variable COL Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+    $default  reduce using rule 66 (Assignment)
+
+
+state 139
+
+   25 StdType: error .
+
+    $default  reduce using rule 25 (StdType)
+
+
+state 140
+
+   24 StdType: CHARACTER .
+
+    $default  reduce using rule 24 (StdType)
+
+
+state 141
+
+   23 StdType: FLOAT .
+
+    $default  reduce using rule 23 (StdType)
+
+
+state 142
+
+   22 StdType: INTEGER .
+
+    $default  reduce using rule 22 (StdType)
+
+
+state 143
+
+   18 Idents: Idents . ',' IDENTIFIER
+   19       | Idents . error IDENTIFIER
+   53 Params: Idents . ':' Type
+   54       | Idents . error Type
+
+    error  shift, and go to state 201
+    ','    shift, and go to state 94
+    ':'    shift, and go to state 202
+
+
+state 144
+
+   44 Head: FUNCTION IDENTIFIER error StdType . ';'
+
+    ';'  shift, and go to state 203
+
+
+state 145
+
+   51 Args: error Params . ')'
+   55 Params: Params . ';' Idents ':' Type
+   56       | Params . error Idents ':' Type
+   57       | Params . ';' Idents error Type
+
+    error  shift, and go to state 204
+    ';'    shift, and go to state 205
+    ')'    shift, and go to state 206
+
+
+state 146
+
+   50 Args: '(' Params . ')'
+   52     | '(' Params . error
+   55 Params: Params . ';' Idents ':' Type
+   56       | Params . error Idents ':' Type
+   57       | Params . ';' Idents error Type
+
+    error  shift, and go to state 207
+    ';'    shift, and go to state 205
+    ')'    shift, and go to state 208
+
+
+state 147
+
+   43 Head: FUNCTION IDENTIFIER ':' StdType . ';'
+   45     | FUNCTION IDENTIFIER ':' StdType . error
+
+    error  shift, and go to state 209
+    ';'    shift, and go to state 210
+
+
+state 148
+
+   41 Head: FUNCTION IDENTIFIER Args error . StdType ';'
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 211
+
+
+state 149
+
+   40 Head: FUNCTION IDENTIFIER Args ':' . StdType ';'
+   42     | FUNCTION IDENTIFIER Args ':' . StdType error
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 212
+
+
+state 150
+
+   47 Head: PROCEDURE IDENTIFIER Args error .
+
+    $default  reduce using rule 47 (Head)
+
+
+state 151
+
+   46 Head: PROCEDURE IDENTIFIER Args ';' .
+
+    $default  reduce using rule 46 (Head)
+
+
+state 152
+
+   15 Decls: Decls Idents error . Type ';'
+   19 Idents: Idents error . IDENTIFIER
+
+    error       shift, and go to state 139
+    ARRAY       shift, and go to state 154
+    CHARACTER   shift, and go to state 140
+    FLOAT       shift, and go to state 141
+    IDENTIFIER  shift, and go to state 155
+    INTEGER     shift, and go to state 142
+
+    Type       go to state 213
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 153
+
+   14 Decls: Decls Idents ':' . Type ';'
+   16      | Decls Idents ':' . Type error
+
+    error      shift, and go to state 139
+    ARRAY      shift, and go to state 154
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    Type       go to state 214
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 154
+
+   26 ArrayType: ARRAY . '[' Dim ']' OF StdType
+   27          | ARRAY . error Dim ']' OF StdType
+   28          | ARRAY . '[' Dim error OF StdType
+   29          | ARRAY . '[' Dim ']' error StdType
+
+    error  shift, and go to state 215
+    '['    shift, and go to state 216
+
+
+state 155
+
+   19 Idents: Idents error IDENTIFIER .
+
+    $default  reduce using rule 19 (Idents)
+
+
+state 156
+
+   12 Decls: Idents error Type . ';'
+
+    ';'  shift, and go to state 217
+
+
+state 157
+
+   20 Type: StdType .
+
+    $default  reduce using rule 20 (Type)
+
+
+state 158
+
+   21 Type: ArrayType .
+
+    $default  reduce using rule 21 (Type)
+
+
+state 159
+
+   18 Idents: Idents ',' IDENTIFIER .
+
+    $default  reduce using rule 18 (Idents)
+
+
+state 160
+
+   11 Decls: Idents ':' Type . ';'
+   13      | Idents ':' Type . error
+
+    error  shift, and go to state 218
+    ';'    shift, and go to state 219
+
+
+state 161
+
+  141 Function: error Exprs ')' .
+
+    $default  reduce using rule 141 (Function)
+
+
+state 162
+
+  139 Function: IDENTIFIER '(' ')' .
+
+    $default  reduce using rule 139 (Function)
+
+
+state 163
+
+  117 Exprs: Exprs . ',' Expr
+  118      | Exprs . error Expr
+  140 Function: IDENTIFIER '(' Exprs . ')'
+  142         | IDENTIFIER '(' Exprs . error
+
+    error  shift, and go to state 220
+    ','    shift, and go to state 108
+    ')'    shift, and go to state 221
+
+
+state 164
+
+  133 Factor: '(' Expr error .
+
+    $default  reduce using rule 133 (Factor)
+
+
+state 165
+
+  131 Factor: '(' Expr ')' .
+
+    $default  reduce using rule 131 (Factor)
+
+
+state 166
+
+  118 Exprs: Exprs error Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+    $default  reduce using rule 118 (Exprs)
+
+
+state 167
+
+  117 Exprs: Exprs ',' Expr .
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+
+    $default  reduce using rule 117 (Exprs)
+
+
+state 168
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  122     | Expr AND Expr .
+  123     | Expr . MulOp Expr
+
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+
+    AND  error (nonassociative)
+
+    $default  reduce using rule 122 (Expr)
+
+
+state 169
+
+  119 Expr: Expr . RelOp Expr
+  119     | Expr RelOp Expr .
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+
+    $default  reduce using rule 119 (Expr)
+
+
+state 170
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  120     | Expr AddOp Expr .
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    MulOp  shift, and go to state 113
+
+    $default  reduce using rule 120 (Expr)
+
+
+state 171
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+  123     | Expr MulOp Expr .
+
+    $default  reduce using rule 123 (Expr)
+
+
+state 172
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  121     | Expr OR Expr .
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+
+    OR  error (nonassociative)
+
+    $default  reduce using rule 121 (Expr)
+
+
+state 173
+
+   82 Cases: error . CaseElt
+   92 Labels: error .
+
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 92 (Labels)
+
+    CaseElt     go to state 223
+    CaseLabels  go to state 180
+    Labels      go to state 181
+
+
+state 174
+
+   89 Labels: INTNUM .
+
+    $default  reduce using rule 89 (Labels)
+
+
+state 175
+
+   90 Labels: FLOATNUM .
+
+    $default  reduce using rule 90 (Labels)
+
+
+state 176
+
+   91 Labels: CHARCONST .
+
+    $default  reduce using rule 91 (Labels)
+
+
+state 177
+
+   81 Cases: ';' . CaseElt
+   83      | ';' .
+
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+
+    $default  reduce using rule 83 (Cases)
+
+    CaseElt     go to state 224
+    CaseLabels  go to state 180
+    Labels      go to state 181
+
+
+state 178
+
+   71 CaseStmt: CASE Expr error Cases . END
+   77 Cases: Cases . ';' CaseElt
+   78      | Cases . error CaseElt
+   79      | Cases . ';'
+   80      | Cases . error
+
+    error  shift, and go to state 225
+    END    shift, and go to state 226
+    ';'    shift, and go to state 227
+
+
+state 179
+
+   76 Cases: CaseElt .
+
+    $default  reduce using rule 76 (Cases)
+
+
+state 180
+
+   84 CaseElt: CaseLabels . ':' Stmt
+   85        | CaseLabels . error Stmt
+   87 CaseLabels: CaseLabels . ',' Labels
+   88           | CaseLabels . error Labels
+
+    error  shift, and go to state 228
+    ','    shift, and go to state 229
+    ':'    shift, and go to state 230
+
+
+state 181
+
+   86 CaseLabels: Labels .
+
+    $default  reduce using rule 86 (CaseLabels)
+
+
+state 182
+
+   73 CaseStmt: CASE Expr OF END .
+
+    $default  reduce using rule 73 (CaseStmt)
+
+
+state 183
+
+   70 CaseStmt: CASE Expr OF Cases . END
+   72         | CASE Expr OF Cases .
+   77 Cases: Cases . ';' CaseElt
+   78      | Cases . error CaseElt
+   79      | Cases . ';'
+   80      | Cases . error
+
+    END  shift, and go to state 231
+    ';'  shift, and go to state 227
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 72 (CaseStmt)
+
+
+state 184
+
+  109 Invocation: IDENTIFIER '(' Exprs error .
+  118 Exprs: Exprs error . Expr
+
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 109 (Invocation)
+
+    Expr      go to state 166
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 185
+
+  107 Invocation: IDENTIFIER '(' Exprs ')' .
+
+    $default  reduce using rule 107 (Invocation)
+
+
+state 186
+
+  138 Variable: IDENTIFIER '[' Expr error .
+
+    $default  reduce using rule 138 (Variable)
+
+
+state 187
+
+  136 Variable: IDENTIFIER '[' Expr ']' .
+
+    $default  reduce using rule 136 (Variable)
+
+
+state 188
+
+   94 IfStmt: IF Expr error Stmt . ELSE Stmt
+   97       | IF Expr error Stmt .
+
+    ELSE  shift, and go to state 232
+
+    $default  reduce using rule 97 (IfStmt)
+
+
+state 189
+
+   93 IfStmt: IF Expr THEN Stmt . ELSE Stmt
+   95       | IF Expr THEN Stmt . error Stmt
+   96       | IF Expr THEN Stmt .
+
+    ELSE  shift, and go to state 234
+
+    $default  reduce using rule 96 (IfStmt)
+
+
+state 190
+
+  119 Expr: Expr . RelOp Expr
+  120     | Expr . AddOp Expr
+  121     | Expr . OR Expr
+  122     | Expr . AND Expr
+  123     | Expr . MulOp Expr
+  137 Variable: error Expr . ']'
+
+    AND    shift, and go to state 110
+    RelOp  shift, and go to state 111
+    AddOp  shift, and go to state 112
+    MulOp  shift, and go to state 113
+    OR     shift, and go to state 114
+    ']'    shift, and go to state 115
+
+
+state 191
+
+   99 IOStmt: READ error Variable ')' .
+
+    $default  reduce using rule 99 (IOStmt)
+
+
+state 192
+
+  101 IOStmt: READ '(' error ')' .
+
+    $default  reduce using rule 101 (IOStmt)
+
+
+state 193
+
+  100 IOStmt: READ '(' Variable error .
+
+    $default  reduce using rule 100 (IOStmt)
+
+
+state 194
+
+   98 IOStmt: READ '(' Variable ')' .
+
+    $default  reduce using rule 98 (IOStmt)
+
+
+state 195
+
+   69 WhileStmt: WHILE Expr error Stmt .
+
+    $default  reduce using rule 69 (WhileStmt)
+
+
+state 196
+
+   68 WhileStmt: WHILE Expr DO Stmt .
+
+    $default  reduce using rule 68 (WhileStmt)
+
+
+state 197
+
+  103 IOStmt: WRITE error Expr ')' .
+
+    $default  reduce using rule 103 (IOStmt)
+
+
+state 198
+
+  105 IOStmt: WRITE '(' STRINGCONSTANT ')' .
+
+    $default  reduce using rule 105 (IOStmt)
+
+
+state 199
+
+  104 IOStmt: WRITE '(' Expr error .
+
+    $default  reduce using rule 104 (IOStmt)
+
+
+state 200
+
+  102 IOStmt: WRITE '(' Expr ')' .
+
+    $default  reduce using rule 102 (IOStmt)
+
+
+state 201
+
+   19 Idents: Idents error . IDENTIFIER
+   54 Params: Idents error . Type
+
+    error       shift, and go to state 139
+    ARRAY       shift, and go to state 154
+    CHARACTER   shift, and go to state 140
+    FLOAT       shift, and go to state 141
+    IDENTIFIER  shift, and go to state 155
+    INTEGER     shift, and go to state 142
+
+    Type       go to state 235
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 202
+
+   53 Params: Idents ':' . Type
+
+    error      shift, and go to state 139
+    ARRAY      shift, and go to state 154
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    Type       go to state 236
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 203
+
+   44 Head: FUNCTION IDENTIFIER error StdType ';' .
+
+    $default  reduce using rule 44 (Head)
+
+
+state 204
+
+   56 Params: Params error . Idents ':' Type
+
+    IDENTIFIER  shift, and go to state 40
+
+    Idents  go to state 237
+
+
+state 205
+
+   55 Params: Params ';' . Idents ':' Type
+   57       | Params ';' . Idents error Type
+
+    IDENTIFIER  shift, and go to state 40
+
+    Idents  go to state 238
+
+
+state 206
+
+   51 Args: error Params ')' .
+
+    $default  reduce using rule 51 (Args)
+
+
+state 207
+
+   52 Args: '(' Params error .
+   56 Params: Params error . Idents ':' Type
+
+    IDENTIFIER  shift, and go to state 40
+
+    $default  reduce using rule 52 (Args)
+
+    Idents  go to state 237
+
+
+state 208
+
+   50 Args: '(' Params ')' .
+
+    $default  reduce using rule 50 (Args)
+
+
+state 209
+
+   45 Head: FUNCTION IDENTIFIER ':' StdType error .
+
+    $default  reduce using rule 45 (Head)
+
+
+state 210
+
+   43 Head: FUNCTION IDENTIFIER ':' StdType ';' .
+
+    $default  reduce using rule 43 (Head)
+
+
+state 211
+
+   41 Head: FUNCTION IDENTIFIER Args error StdType . ';'
+
+    ';'  shift, and go to state 239
+
+
+state 212
+
+   40 Head: FUNCTION IDENTIFIER Args ':' StdType . ';'
+   42     | FUNCTION IDENTIFIER Args ':' StdType . error
+
+    error  shift, and go to state 240
+    ';'    shift, and go to state 241
+
+
+state 213
+
+   15 Decls: Decls Idents error Type . ';'
+
+    ';'  shift, and go to state 242
+
+
+state 214
+
+   14 Decls: Decls Idents ':' Type . ';'
+   16      | Decls Idents ':' Type . error
+
+    error  shift, and go to state 243
+    ';'    shift, and go to state 244
+
+
+state 215
+
+   27 ArrayType: ARRAY error . Dim ']' OF StdType
+
+    INTNUM     shift, and go to state 245
+    CHARCONST  shift, and go to state 246
+
+    Dim  go to state 247
+
+
+state 216
+
+   26 ArrayType: ARRAY '[' . Dim ']' OF StdType
+   28          | ARRAY '[' . Dim error OF StdType
+   29          | ARRAY '[' . Dim ']' error StdType
+
+    INTNUM     shift, and go to state 245
+    CHARCONST  shift, and go to state 246
+
+    Dim  go to state 248
+
+
+state 217
+
+   12 Decls: Idents error Type ';' .
+
+    $default  reduce using rule 12 (Decls)
+
+
+state 218
+
+   13 Decls: Idents ':' Type error .
+
+    $default  reduce using rule 13 (Decls)
+
+
+state 219
+
+   11 Decls: Idents ':' Type ';' .
+
+    $default  reduce using rule 11 (Decls)
+
+
+state 220
+
+  118 Exprs: Exprs error . Expr
+  142 Function: IDENTIFIER '(' Exprs error .
+
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 142 (Function)
+
+    Expr      go to state 166
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 221
+
+  140 Function: IDENTIFIER '(' Exprs ')' .
+
+    $default  reduce using rule 140 (Function)
+
+
+state 222
+
+   92 Labels: error .
+
+    $default  reduce using rule 92 (Labels)
+
+
+state 223
+
+   82 Cases: error CaseElt .
+
+    $default  reduce using rule 82 (Cases)
+
+
+state 224
+
+   81 Cases: ';' CaseElt .
+
+    $default  reduce using rule 81 (Cases)
+
+
+state 225
+
+   78 Cases: Cases error . CaseElt
+   80      | Cases error .
+
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 80 (Cases)
+
+    CaseElt     go to state 249
+    CaseLabels  go to state 180
+    Labels      go to state 181
+
+
+state 226
+
+   71 CaseStmt: CASE Expr error Cases END .
+
+    $default  reduce using rule 71 (CaseStmt)
+
+
+state 227
+
+   77 Cases: Cases ';' . CaseElt
+   79      | Cases ';' .
+
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+
+    $default  reduce using rule 79 (Cases)
+
+    CaseElt     go to state 250
+    CaseLabels  go to state 180
+    Labels      go to state 181
+
+
+state 228
+
+   85 CaseElt: CaseLabels error . Stmt
+   88 CaseLabels: CaseLabels error . Labels
+
+    error       shift, and go to state 251
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    INTNUM      shift, and go to state 174
+    FLOATNUM    shift, and go to state 175
+    CHARCONST   shift, and go to state 176
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 252
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    Labels      go to state 253
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 229
+
+   87 CaseLabels: CaseLabels ',' . Labels
+
+    error      shift, and go to state 222
+    INTNUM     shift, and go to state 174
+    FLOATNUM   shift, and go to state 175
+    CHARCONST  shift, and go to state 176
+
+    Labels  go to state 254
+
+
+state 230
+
+   84 CaseElt: CaseLabels ':' . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 255
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 231
+
+   70 CaseStmt: CASE Expr OF Cases END .
+
+    $default  reduce using rule 70 (CaseStmt)
+
+
+state 232
+
+   94 IfStmt: IF Expr error Stmt ELSE . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 256
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 233
+
+   95 IfStmt: IF Expr THEN Stmt error . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 257
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 234
+
+   93 IfStmt: IF Expr THEN Stmt ELSE . Stmt
+
+    error       shift, and go to state 19
+    Begin       shift, and go to state 7
+    CASE        shift, and go to state 20
+    IDENTIFIER  shift, and go to state 21
+    IF          shift, and go to state 22
+    READ        shift, and go to state 23
+    RETURN      shift, and go to state 24
+    WHILE       shift, and go to state 25
+    WRITE       shift, and go to state 26
+
+    Stmt        go to state 258
+    Assignment  go to state 28
+    WhileStmt   go to state 29
+    CaseStmt    go to state 30
+    IfStmt      go to state 31
+    IOStmt      go to state 32
+    Invocation  go to state 33
+    Block       go to state 34
+    Return      go to state 36
+    Variable    go to state 37
+
+
+state 235
+
+   54 Params: Idents error Type .
+
+    $default  reduce using rule 54 (Params)
+
+
+state 236
+
+   53 Params: Idents ':' Type .
+
+    $default  reduce using rule 53 (Params)
+
+
+state 237
+
+   18 Idents: Idents . ',' IDENTIFIER
+   19       | Idents . error IDENTIFIER
+   56 Params: Params error Idents . ':' Type
+
+    error  shift, and go to state 259
+    ','    shift, and go to state 94
+    ':'    shift, and go to state 260
+
+
+state 238
+
+   18 Idents: Idents . ',' IDENTIFIER
+   19       | Idents . error IDENTIFIER
+   55 Params: Params ';' Idents . ':' Type
+   57       | Params ';' Idents . error Type
+
+    error  shift, and go to state 261
+    ','    shift, and go to state 94
+    ':'    shift, and go to state 262
+
+
+state 239
+
+   41 Head: FUNCTION IDENTIFIER Args error StdType ';' .
+
+    $default  reduce using rule 41 (Head)
+
+
+state 240
+
+   42 Head: FUNCTION IDENTIFIER Args ':' StdType error .
+
+    $default  reduce using rule 42 (Head)
+
+
+state 241
+
+   40 Head: FUNCTION IDENTIFIER Args ':' StdType ';' .
+
+    $default  reduce using rule 40 (Head)
+
+
+state 242
+
+   15 Decls: Decls Idents error Type ';' .
+
+    $default  reduce using rule 15 (Decls)
+
+
+state 243
+
+   16 Decls: Decls Idents ':' Type error .
+
+    $default  reduce using rule 16 (Decls)
+
+
+state 244
+
+   14 Decls: Decls Idents ':' Type ';' .
+
+    $default  reduce using rule 14 (Decls)
+
+
+state 245
+
+   30 Dim: INTNUM . DDOT INTNUM
+   32    | INTNUM . error INTNUM
+
+    error  shift, and go to state 263
+    DDOT   shift, and go to state 264
+
+
+state 246
+
+   31 Dim: CHARCONST . DDOT CHARCONST
+   33    | CHARCONST . error CHARCONST
+
+    error  shift, and go to state 265
+    DDOT   shift, and go to state 266
+
+
+state 247
+
+   27 ArrayType: ARRAY error Dim . ']' OF StdType
+
+    ']'  shift, and go to state 267
+
+
+state 248
+
+   26 ArrayType: ARRAY '[' Dim . ']' OF StdType
+   28          | ARRAY '[' Dim . error OF StdType
+   29          | ARRAY '[' Dim . ']' error StdType
+
+    error  shift, and go to state 268
+    ']'    shift, and go to state 269
+
+
+state 249
+
+   78 Cases: Cases error CaseElt .
+
+    $default  reduce using rule 78 (Cases)
+
+
+state 250
+
+   77 Cases: Cases ';' CaseElt .
+
+    $default  reduce using rule 77 (Cases)
+
+
+state 251
+
+   92 Labels: error .
+  108 Invocation: error . Exprs ')'
+  137 Variable: error . Expr ']'
+
+    IDENTIFIER      shift, and go to state 58
+    INTNUM          shift, and go to state 59
+    FLOATNUM        shift, and go to state 60
+    CHARCONST       shift, and go to state 61
+    NOT             shift, and go to state 62
+    STRINGCONSTANT  shift, and go to state 63
+    '('             shift, and go to state 64
+
+    error  error (nonassociative)
+
+    $default  reduce using rule 92 (Labels)
+
+    Exprs     go to state 65
+    Expr      go to state 66
+    Factor    go to state 67
+    Variable  go to state 68
+    Function  go to state 69
+
+
+state 252
+
+   85 CaseElt: CaseLabels error Stmt .
+
+    $default  reduce using rule 85 (CaseElt)
+
+
+state 253
+
+   88 CaseLabels: CaseLabels error Labels .
+
+    $default  reduce using rule 88 (CaseLabels)
+
+
+state 254
+
+   87 CaseLabels: CaseLabels ',' Labels .
+
+    $default  reduce using rule 87 (CaseLabels)
+
+
+state 255
+
+   84 CaseElt: CaseLabels ':' Stmt .
+
+    $default  reduce using rule 84 (CaseElt)
+
+
+state 256
+
+   94 IfStmt: IF Expr error Stmt ELSE Stmt .
+
+    $default  reduce using rule 94 (IfStmt)
+
+
+state 257
+
+   95 IfStmt: IF Expr THEN Stmt error Stmt .
+
+    $default  reduce using rule 95 (IfStmt)
+
+
+state 258
+
+   93 IfStmt: IF Expr THEN Stmt ELSE Stmt .
+
+    $default  reduce using rule 93 (IfStmt)
+
+
+state 259
+
+   19 Idents: Idents error . IDENTIFIER
+
+    IDENTIFIER  shift, and go to state 155
+
+
+state 260
+
+   56 Params: Params error Idents ':' . Type
+
+    error      shift, and go to state 139
+    ARRAY      shift, and go to state 154
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    Type       go to state 270
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 261
+
+   19 Idents: Idents error . IDENTIFIER
+   57 Params: Params ';' Idents error . Type
+
+    error       shift, and go to state 139
+    ARRAY       shift, and go to state 154
+    CHARACTER   shift, and go to state 140
+    FLOAT       shift, and go to state 141
+    IDENTIFIER  shift, and go to state 155
+    INTEGER     shift, and go to state 142
+
+    Type       go to state 271
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 262
+
+   55 Params: Params ';' Idents ':' . Type
+
+    error      shift, and go to state 139
+    ARRAY      shift, and go to state 154
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    Type       go to state 272
+    StdType    go to state 157
+    ArrayType  go to state 158
+
+
+state 263
+
+   32 Dim: INTNUM error . INTNUM
+
+    INTNUM  shift, and go to state 273
+
+
+state 264
+
+   30 Dim: INTNUM DDOT . INTNUM
+
+    INTNUM  shift, and go to state 274
+
+
+state 265
+
+   33 Dim: CHARCONST error . CHARCONST
+
+    CHARCONST  shift, and go to state 275
+
+
+state 266
+
+   31 Dim: CHARCONST DDOT . CHARCONST
+
+    CHARCONST  shift, and go to state 276
+
+
+state 267
+
+   27 ArrayType: ARRAY error Dim ']' . OF StdType
+
+    OF  shift, and go to state 277
+
+
+state 268
+
+   28 ArrayType: ARRAY '[' Dim error . OF StdType
+
+    OF  shift, and go to state 278
+
+
+state 269
+
+   26 ArrayType: ARRAY '[' Dim ']' . OF StdType
+   29          | ARRAY '[' Dim ']' . error StdType
+
+    error  shift, and go to state 279
+    OF     shift, and go to state 280
+
+
+state 270
+
+   56 Params: Params error Idents ':' Type .
+
+    $default  reduce using rule 56 (Params)
+
+
+state 271
+
+   57 Params: Params ';' Idents error Type .
+
+    $default  reduce using rule 57 (Params)
+
+
+state 272
+
+   55 Params: Params ';' Idents ':' Type .
+
+    $default  reduce using rule 55 (Params)
+
+
+state 273
+
+   32 Dim: INTNUM error INTNUM .
+
+    $default  reduce using rule 32 (Dim)
+
+
+state 274
+
+   30 Dim: INTNUM DDOT INTNUM .
+
+    $default  reduce using rule 30 (Dim)
+
+
+state 275
+
+   33 Dim: CHARCONST error CHARCONST .
+
+    $default  reduce using rule 33 (Dim)
+
+
+state 276
+
+   31 Dim: CHARCONST DDOT CHARCONST .
+
+    $default  reduce using rule 31 (Dim)
+
+
+state 277
+
+   27 ArrayType: ARRAY error Dim ']' OF . StdType
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 281
+
+
+state 278
+
+   28 ArrayType: ARRAY '[' Dim error OF . StdType
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 282
+
+
+state 279
+
+   29 ArrayType: ARRAY '[' Dim ']' error . StdType
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 283
+
+
+state 280
+
+   26 ArrayType: ARRAY '[' Dim ']' OF . StdType
+
+    error      shift, and go to state 139
+    CHARACTER  shift, and go to state 140
+    FLOAT      shift, and go to state 141
+    INTEGER    shift, and go to state 142
+
+    StdType  go to state 284
+
+
+state 281
+
+   27 ArrayType: ARRAY error Dim ']' OF StdType .
+
+    $default  reduce using rule 27 (ArrayType)
+
+
+state 282
+
+   28 ArrayType: ARRAY '[' Dim error OF StdType .
+
+    $default  reduce using rule 28 (ArrayType)
+
+
+state 283
+
+   29 ArrayType: ARRAY '[' Dim ']' error StdType .
+
+    $default  reduce using rule 29 (ArrayType)
+
+
+state 284
+
+   26 ArrayType: ARRAY '[' Dim ']' OF StdType .
+
+    $default  reduce using rule 26 (ArrayType)

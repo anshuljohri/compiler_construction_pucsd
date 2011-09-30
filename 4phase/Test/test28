@@ -1,0 +1,21 @@
+PROGRAM TowersofHanoi;
+VAR
+   numdiscs : INTEGER;
+PROCEDURE DoTowers (NumDiscs, OrigPeg, NewPeg, TempPeg : INTEGER);
+BEGIN
+
+   IF NumDiscs = 1 THEN
+      WRITE('OrigPeg')
+   ELSE
+      BEGIN
+         DoTowers(NumDiscs-1, OrigPeg, TempPeg, NewPeg);
+         WRITE('ETC');
+         DoTowers(NumDiscs-1, TempPeg, NewPeg, OrigPeg)
+      END
+END;
+BEGIN    {Main}
+   WRITE('Pleaseenterthenumberofdiscsinthetower');
+   READ(numdiscs);
+   WRITE('ggg');
+   DoTowers(numdiscs, 1, 3, 2)
+END

@@ -1,0 +1,33 @@
+PROGRAM test9;
+	VAR v1,v2,v3:INTEGER;
+	FUNCTION F1(I:INTEGER):INTEGER;
+	BEGIN 
+		IF I=1 
+		THEN RETURN I
+		ELSE I:=I*F1(I-1,v1)
+	END;
+	BEGIN
+	WRITE('Enterthenumber');
+	READ(v1);
+	F1(I);
+	WHILE (v1<I) AND (v1>1) DO
+				BEGIN
+					v1:=4;
+					BEGIN
+						IF (NOT I)
+						THEN BEGIN
+							READ(v2);
+							WRITE('abc');
+							WRITE(F1(F1(I)))
+       						     END
+						ELSE BEGIN
+							WRITE('inelse');
+							v1:=v1+v2
+						     END;
+						WRITE('def');
+						READ(I)
+					END;
+					
+					WRITE('lastbegin')
+				END
+	END

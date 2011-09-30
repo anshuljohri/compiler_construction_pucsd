@@ -1,0 +1,10 @@
+PROGRAM Test1;
+	VAR X,Y,Z:INTEGER;A,B:FLOAT;
+	PROCEDURE IFEQUAL(m,n:CHARACTER);
+	BEGIN
+		m:='t';
+		n:='a';
+		IF m=n
+			THEN WRITE("equal")
+			ELSE WRITE("notequal")
+	END

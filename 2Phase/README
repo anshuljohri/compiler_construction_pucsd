@@ -1,0 +1,12 @@
+                    Name     :   Anshul Johri
+                    Roll No. :   2003104
+
+How To Build:   To Build executable file type "make" on command prompt.
+
+Execute The Parser: It  Gives Executable File Named "Nothing".
+
+Known Problems:   As such no problem. But I tried to handle as much as errors as much i could but there are some cases like "Operator Missing" . Spelling Mistake , Some keyword missing, Which itried to handle but couldn't succeed. 
+
+Test Run Results:  Give "make check" on command prompt. It generates                                      "output.txt", which contains the results of testcases.
+
+ 

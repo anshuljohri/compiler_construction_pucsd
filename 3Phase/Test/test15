@@ -1,0 +1,62 @@
+        
+PROGRAM Employee;
+
+{$R+}
+
+VAR staff : ARRAY[1..10] OF INTEGER;
+    Sup   : INTEGER;
+    Prog  : FLOAT;
+    Sec   : CHARACTER;
+    Index : INTEGER;
+
+BEGIN
+
+  
+   WRITE('XYZ');
+   WRITE(1);
+
+   NEW(Sup);
+   staff[1] := Sup;
+   SupInit('B', 5100, 'P');
+
+   NEW(Prog);
+   staff[2] := Prog;
+   ProgInit('J', 3500, 'P');
+
+   new(Prog);
+   staff[3] := Prog;
+   ProgInit('d', 7700, 'l');
+
+   new(Sec);
+   staff[4] := Sec;
+   SecInit('T', 2200, True, 85);
+
+   new(Sup);
+   staff[5] := Sup;
+   SupInit('T', 5430,'S');
+
+   new(Prog);
+   staff[6] := Prog;
+   ProgInit('D', 5725, 'u');
+
+   WHILE (Index = 1) DO
+      Display:=0
+
+END
+
+
+
+
+{(* Result of execution
+
+XYZ Staff assignments.
+
+Big John is the president and makes $5100 per month.
+Joe Hacker specializes in Pascal and makes $3500 per month.
+OOP Wizard specializes in OOP Pascal and makes $7700 per month.
+Tillie TYper can type 85 words per minute.
+Tom Talker is the Sales Manager and makes $5430 per month.
+Dave Debug specializes in Assembly Language and makes $5725 per month.
+
+*)
+}

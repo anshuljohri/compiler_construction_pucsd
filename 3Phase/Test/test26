@@ -1,0 +1,50 @@
+PROGRAM disk;
+VAR Qelement : INTEGER;
+   IOq	     : ARRAY [1..10] OF INTEGER;
+   proceed   : ARRAY [1..10] OF CHARACTER;
+
+PROCEDURE entryiorequest(procid,trackno : INTEGER);
+BEGIN
+   {Enter proc id and track no in io q}
+   count :=count - 1;
+   IF count > 1 THEN proceed[procid]:=1;
+   ioinprogress:=procid
+END; { entryiorequest }
+
+PROCEDURE entryiocomplete(procid : INTEGER);
+BEGIN
+   IF ioinprogress = procid THEN
+   BEGIN
+      count :=count -1;
+      {Remove request of this process from IO_Q}
+      ioinprogress:=0;
+      schedulenext(signal)
+   END
+END; { entryiocomplete }
+
+PROCEDURE entryioschedule;
+VAR K : INTEGER;
+BEGIN
+   schedulenext(signal);
+   IF COUNT > 0 THEN
+   BEGIN
+      {Select the io operation to be initiated}
+   proceed[procid]:=signal
+   END
+END; { entryioschedule }
+BEGIN
+   COUNT:=0;
+   ioinprogress:=0
+END { disk }
+
+?.,;
+   
+
+
+
+
+
+
+
+
+

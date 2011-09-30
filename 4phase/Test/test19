@@ -1,0 +1,33 @@
+PROGRAM SHARED;
+VAR
+   buffer : INTEGER;
+   full	  : INTEGER;
+
+BEGIN
+   WHILE(NOT pfound)  DO
+      WHILE (i MOD 2 = 0) DO
+      BEGIN
+	 IF full = 0 THEN
+	 BEGIN
+	    {procedure in buffer.message}
+	    full:=1;
+	    pfound :=1
+	 END;
+	 CASE ABC[9+I] OF 
+	   1 : BEGIN
+		 IF await(B)=9 OR NOT await(C) THEN
+		 BEGIN
+		    d:=5;
+		    C:='C';	
+		    WRITE('CORRECT')
+		 END;
+		  R:='C'
+	       END;
+	   {REMAINDER OF CYCLE}
+	   2: ABC:=abc[I+3*d]
+	 END
+      END
+END
+
+	 
+   

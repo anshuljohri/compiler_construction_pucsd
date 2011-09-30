@@ -1,0 +1,14 @@
+PROGRAM Test1;
+	VAR XcY,Y,Z:INTEGER;A,B:FLOAT;
+	PROCEDURE IFEQUAL(m,n:CHARACTER);
+	BEGIN
+		m:='t';
+		n:='e';
+		IF m=n
+			THEN WRITE('equal')
+			ELSE WRITE('notequal')
+	END;
+	BEGIN
+		X:=4
+	END
+	

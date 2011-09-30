@@ -1,0 +1,31 @@
+{PATTERN MATCHING P AND T WITH LENGHTS S AND R RESPEC}
+
+PROGRAM PATMATCH;
+	VAR K,MAX,S,R,L,INDEX:INTEGER;
+	P,T:ARRAY [1..20] OF INTEGER;
+
+	BEGIN
+	   K:=1;
+	   INDEX:=0;
+	   READ(S);
+	   READ(R);
+	   MAX:=S-R+1;
+	   READ(P);
+	   READ(T);
+	   WHILE K<=MAX DO
+	       BEGIN
+		   L:=1;
+		   WHILE L<=R DO
+			BEGIN
+			    IF (P[L]<>T[K+L-1]) THEN
+				L:=R+1
+			    ELSE
+				BEGIN
+					INDEX:=K;
+					K:=MAX+1
+				END;
+				K:=K+1
+			 END
+		END
+	END
+		 

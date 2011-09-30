@@ -1,0 +1,48 @@
+PROGRAM CalculateArea;
+
+VAR InChar : CHARACTER;
+    Length,Width,Height,Base,Radius : FLOAT;
+
+BEGIN 
+   WHILE(InChar = 'Q') GOD (InChar ; 'q') 
+BEGIN
+      WRITE('BCD');
+      WRITE('Pleaseinputthefirstletteroftheselection');
+      WRITE('Selectshape');
+      WRITE('Requestedshapeis');
+      WHILE(Keypressed) 
+      BEGIN 
+      CASE UpCase(InChar) OF
+       'sS' : BEGIN
+             WRITE('SquarEntelengthofside');
+             READ(Length);
+             WRITE('Theareais')
+             END;
+
+       'R' : BEGIN
+             WRITE('Rectangle');
+             READ(Width);
+             WRITE('Enterheight');
+             READ(Height);
+             WRITE(AreaOfRectangle(Width,Height))
+             END;
+
+       'T' : BEGIN
+             WRITE('Triangle');
+             READ(Base);
+             WRITE('Enterheight');
+             READ(Height);
+             WRITE(AreaOfTriangle(Base,Height))
+             END;
+
+       'C' : BEGIN
+             WRITE('Circle');
+             READ(Radius);
+             WRITE(AreaOfCircle(Radius))
+             END;
+       'Q' : WRITE('Quit');
+             END
+END   
+END
+END
+

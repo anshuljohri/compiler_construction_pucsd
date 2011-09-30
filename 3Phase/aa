@@ -1,0 +1,195 @@
+Stack has been Initialised After PROGRAM
+New Symbol Table Is Created
+
+Pushed Successfully and Top is 0 And Address contained is 134562288
+
+Token: KEYWORD      [  PROGRAM  ]
+Token: Identifier   [  example  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  x  ]
+		IDENTIFIER is x
+
+Address contained in top of stack is 134562288
+
+
+HV of [x] is 120 and name[probe] is (null)
+
+	Inside if and H[probe].name is x
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  y  ]
+		 IDENTIFIER is y
+
+Address contained in top of stack is 134562288
+
+
+HV of [y] is 121 and name[probe] is (null)
+
+	Inside if and H[probe].name is y
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+New Symbol Table Is Created
+
+Pushed Successfully and Top is 1 And Address contained is 134564376
+
+Token: KEYWORD      [  FUNCTION  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  z  ]
+		IDENTIFIER is z
+
+Address contained in top of stack is 134564376
+
+
+HV of [z] is 122 and name[probe] is (null)
+
+	Inside if and H[probe].name is z
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  b  ]
+		 IDENTIFIER is b
+
+Address contained in top of stack is 134564376
+
+
+HV of [b] is 98 and name[probe] is (null)
+
+	Inside if and H[probe].name is b
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  a  ]
+Token: RelOp        [  =  ]
+Symbol is a and probe is 97 and H->name[probe] is (null) and Top of stack address is 134564376
+
+In Check func and symbol a is NOT present in 1th position of Stack
+Symbol is a and probe is 97 and H->name[probe] is (null) and Top of stack address is 134562288
+
+In Check func and symbol a is NOT present in 0th position of Stack
+
+Symbol a is NOT present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  b  ]
+Token: KEYWORD      [  ELSE  ]
+Symbol is b and probe is 98 and H->name[probe] is b and Top of stack address is 134564376
+
+In Check func and symbol b is present
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  b  ]
+Token: SpecialChars [  ,  ]
+Symbol is b and probe is 98 and H->name[probe] is b and Top of stack address is 134564376
+
+In Check func and symbol b is present
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  MOD  ]
+Symbol is a and probe is 97 and H->name[probe] is (null) and Top of stack address is 134564376
+
+In Check func and symbol a is NOT present in 1th position of Stack
+Symbol is a and probe is 97 and H->name[probe] is (null) and Top of stack address is 134562288
+
+In Check func and symbol a is NOT present in 0th position of Stack
+
+Symbol a is NOT present
+Token: Identifier   [  b  ]
+Token: SpecialChars [  )  ]
+Symbol is b and probe is 98 and H->name[probe] is b and Top of stack address is 134564376
+
+In Check func and symbol b is present
+
+
+Poped Successfully And Top is 0 And Address contained on Top of stack is 134562288
+
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  )  ]
+Symbol is x and probe is 120 and H->name[probe] is x and Top of stack address is 134562288
+
+In Check func and symbol x is present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+Symbol is y and probe is 121 and H->name[probe] is y and Top of stack address is 134562288
+
+In Check func and symbol y is present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: RelOp        [  <>  ]
+Symbol is x and probe is 120 and H->name[probe] is x and Top of stack address is 134562288
+
+In Check func and symbol x is present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  OR  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: RelOp        [  <>  ]
+Symbol is y and probe is 121 and H->name[probe] is y and Top of stack address is 134562288
+
+In Check func and symbol y is present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  ,  ]
+Symbol is x and probe is 120 and H->name[probe] is x and Top of stack address is 134562288
+
+In Check func and symbol x is present
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+Symbol is y and probe is 121 and H->name[probe] is y and Top of stack address is 134562288
+
+In Check func and symbol y is present
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  )  ]
+Symbol is x and probe is 120 and H->name[probe] is x and Top of stack address is 134562288
+
+In Check func and symbol x is present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+Symbol is y and probe is 121 and H->name[probe] is y and Top of stack address is 134562288
+
+In Check func and symbol y is present
+
+
+Poped Successfully And Top is -1 And Address contained on Top of stack is 4294967295
+
+Token: KEYWORD      [  END  ]
+
+
+Poped Successfully And Top is -2 And Address contained on Top of stack is 49
+
+Token: KEYWORD      [  END  ]
+		----- Correct----- 

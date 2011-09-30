@@ -1,0 +1,3559 @@
+-------------------------Test/test1------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  example  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  x  ]
+		IDENTIFIER is x
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  y  ]
+		 IDENTIFIER is y
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  z  ]
+		IDENTIFIER is z
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  b  ]
+		 IDENTIFIER is b
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  a  ]
+Token: RelOp        [  =  ]
+	Symbol a is NOT Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  b  ]
+Token: KEYWORD      [  ELSE  ]
+	Symbol b is Present
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  b  ]
+Token: SpecialChars [  ,  ]
+	Symbol b is Present
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  MOD  ]
+	Symbol a is NOT Present
+Token: Identifier   [  b  ]
+Token: SpecialChars [  )  ]
+	Symbol b is Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  )  ]
+	Symbol x is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+	Symbol y is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: RelOp        [  <>  ]
+	Symbol x is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  OR  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: RelOp        [  <>  ]
+	Symbol y is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  gcd  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  ,  ]
+	Symbol x is Present
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+	Symbol y is Present
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  x  ]
+Token: SpecialChars [  )  ]
+	Symbol x is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  y  ]
+Token: SpecialChars [  )  ]
+	Symbol y is Present
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+-------------------------Test/test10------------------------
+Eat Up COMMENTS 
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  PATMATCH  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  K  ]
+		IDENTIFIER is K
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  MAX  ]
+		 IDENTIFIER is MAX
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  S  ]
+		 IDENTIFIER is S
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  R  ]
+		 IDENTIFIER is R
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  L  ]
+		 IDENTIFIER is L
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  INDEX  ]
+		 IDENTIFIER is INDEX
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  P  ]
+		IDENTIFIER is P
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  T  ]
+		 IDENTIFIER is T
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  K  ]
+Token: AssignMent   [  :=  ]
+	Symbol K is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  INDEX  ]
+Token: AssignMent   [  :=  ]
+	Symbol INDEX is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  S  ]
+Token: SpecialChars [  )  ]
+	Symbol S is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  R  ]
+Token: SpecialChars [  )  ]
+	Symbol R is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  MAX  ]
+Token: AssignMent   [  :=  ]
+	Symbol MAX is Present
+Token: Identifier   [  S  ]
+Token: AddOp        [  -  ]
+	Symbol S is Present
+Token: Identifier   [  R  ]
+Token: AddOp        [  +  ]
+	Symbol R is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  P  ]
+Token: SpecialChars [  )  ]
+	Symbol P is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  T  ]
+Token: SpecialChars [  )  ]
+	Symbol T is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  K  ]
+Token: RelOp        [  <=  ]
+	Symbol K is Present
+Token: Identifier   [  MAX  ]
+Token: KEYWORD      [  DO  ]
+	Symbol MAX is Present
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  L  ]
+Token: AssignMent   [  :=  ]
+	Symbol L is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  L  ]
+Token: RelOp        [  <=  ]
+	Symbol L is Present
+Token: Identifier   [  R  ]
+Token: KEYWORD      [  DO  ]
+	Symbol R is Present
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  P  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  L  ]
+Token: SpecialChars [  ]  ]
+	Symbol L is Present
+Token: RelOp        [  <>  ]
+Token: Identifier   [  T  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  K  ]
+Token: AddOp        [  +  ]
+	Symbol K is Present
+Token: Identifier   [  L  ]
+Token: AddOp        [  -  ]
+	Symbol L is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ]  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  L  ]
+Token: AssignMent   [  :=  ]
+	Symbol L is Present
+Token: Identifier   [  R  ]
+Token: AddOp        [  +  ]
+	Symbol R is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  ELSE  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  INDEX  ]
+Token: AssignMent   [  :=  ]
+	Symbol INDEX is Present
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ;  ]
+	Symbol K is Present
+Token: Identifier   [  K  ]
+Token: AssignMent   [  :=  ]
+	Symbol K is Present
+Token: Identifier   [  MAX  ]
+Token: AddOp        [  +  ]
+	Symbol MAX is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  K  ]
+Token: AssignMent   [  :=  ]
+	Symbol K is NOT Present
+Token: Identifier   [  K  ]
+Token: AddOp        [  +  ]
+	Symbol K is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----
+-------------------------Test/test11------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  test11  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  INSERTION  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  N  ]
+		IDENTIFIER is N
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A  ]
+		IDENTIFIER is A
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  K  ]
+		IDENTIFIER is K
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  TEMP  ]
+		 IDENTIFIER is TEMP
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  PTR  ]
+		 IDENTIFIER is PTR
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  k  ]
+Token: AssignMent   [  :=  ]
+	Symbol k is NOT Present
+Token: IntNum       [  2  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  K  ]
+Token: RelOp        [  <  ]
+	Symbol K is Present
+Token: Identifier   [  N  ]
+Token: SpecialChars [  )  ]
+	Symbol N is Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  TEMP  ]
+Token: AssignMent   [  :=  ]
+	Symbol TEMP is Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ]  ]
+	Symbol K is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  PTR  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTR is Present
+Token: Identifier   [  K  ]
+Token: AddOp        [  -  ]
+	Symbol K is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  TEMP  ]
+Token: RelOp        [  <  ]
+	Symbol TEMP is Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTR  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTR is Present
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTR  ]
+Token: AddOp        [  +  ]
+	Symbol PTR is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ]  ]
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTR  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTR is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  PTR  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTR is Present
+Token: Identifier   [  PTR  ]
+Token: AddOp        [  -  ]
+	Symbol PTR is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTR  ]
+Token: AddOp        [  +  ]
+	Symbol PTR is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ]  ]
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  TEMP  ]
+Token: KEYWORD      [  END  ]
+	Symbol TEMP is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'END'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+-------------------------Test/test12------------------------
+Eat Up COMMENTS 
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  SELECTION  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  K  ]
+		IDENTIFIER is K
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  LOC  ]
+		 IDENTIFIER is LOC
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  TEMP  ]
+		 IDENTIFIER is TEMP
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  ARR  ]
+		IDENTIFIER is ARR
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  40  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  MINLOC  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+		IDENTIFIER is ARR
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  40  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  K  ]
+		IDENTIFIER is K
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  N  ]
+		 IDENTIFIER is N
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  LOC  ]
+		 IDENTIFIER is LOC
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  J  ]
+		IDENTIFIER is J
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  MIN  ]
+Token: AssignMent   [  :=  ]
+	Symbol MIN is NOT Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ]  ]
+	Symbol K is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  LOC  ]
+Token: AssignMent   [  :=  ]
+	Symbol LOC is Present
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ;  ]
+	Symbol K is Present
+Token: Identifier   [  K  ]
+Token: AssignMent   [  :=  ]
+	Symbol K is Present
+Token: Identifier   [  K  ]
+Token: AddOp        [  +  ]
+	Symbol K is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  J  ]
+Token: RelOp        [  <=  ]
+	Symbol J is Present
+Token: Identifier   [  N  ]
+Token: KEYWORD      [  DO  ]
+	Symbol N is Present
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  MIN  ]
+Token: RelOp        [  >  ]
+	Symbol MIN is NOT Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  J  ]
+Token: SpecialChars [  ]  ]
+	Symbol J is Present
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  MIN  ]
+Token: AssignMent   [  :=  ]
+	Symbol MIN is NOT Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  J  ]
+Token: SpecialChars [  ]  ]
+	Symbol J is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  LOC  ]
+Token: AssignMent   [  :=  ]
+	Symbol LOC is Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  J  ]
+Token: SpecialChars [  ]  ]
+	Symbol J is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  LOC  ]
+Token: AssignMent   [  :=  ]
+	Symbol LOC is Present
+Token: Identifier   [  J  ]
+Token: KEYWORD      [  END  ]
+	Symbol J is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  J  ]
+Token: AssignMent   [  :=  ]
+	Symbol J is NOT Present
+Token: Identifier   [  J  ]
+Token: AddOp        [  +  ]
+	Symbol J is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  LOC  ]
+Token: KEYWORD      [  END  ]
+	Symbol LOC is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  N  ]
+Token: SpecialChars [  )  ]
+	Symbol N is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+Token: SpecialChars [  )  ]
+	Symbol ARR is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  K  ]
+Token: AssignMent   [  :=  ]
+	Symbol K is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  K  ]
+Token: RelOp        [  <  ]
+	Symbol K is NOT Present
+Token: Identifier   [  N  ]
+Token: KEYWORD      [  DO  ]
+	Symbol N is NOT Present
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  LOC  ]
+Token: AssignMent   [  :=  ]
+	Symbol LOC is NOT Present
+Token: Identifier   [  MINLOC  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+Token: SpecialChars [  ,  ]
+	Symbol ARR is NOT Present
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ,  ]
+	Symbol K is NOT Present
+Token: Identifier   [  N  ]
+Token: SpecialChars [  ,  ]
+	Symbol N is NOT Present
+Token: Identifier   [  LOC  ]
+Token: SpecialChars [  )  ]
+	Symbol LOC is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  TEMP  ]
+Token: AssignMent   [  :=  ]
+	Symbol TEMP is NOT Present
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ]  ]
+	Symbol K is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  K  ]
+Token: SpecialChars [  ]  ]
+	Symbol K is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  LOC  ]
+Token: SpecialChars [  ]  ]
+	Symbol LOC is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  LOC  ]
+Token: SpecialChars [  ]  ]
+	Symbol LOC is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  TEMP  ]
+Token: KEYWORD      [  END  ]
+	Symbol TEMP is NOT Present
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+-------------------------Test/test13------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  test13  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  DEGREE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  START  ]
+		IDENTIFIER is START
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  NODE  ]
+		 IDENTIFIER is NODE
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  NEXT  ]
+		IDENTIFIER is NEXT
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  ADJ  ]
+		 IDENTIFIER is ADJ
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  DEST  ]
+		 IDENTIFIER is DEST
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  LINK  ]
+		 IDENTIFIER is LINK
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  INDEG  ]
+		 IDENTIFIER is INDEG
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  OUTDEG  ]
+		 IDENTIFIER is OUTDEG
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  PTR  ]
+		IDENTIFIER is PTR
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  PTRA  ]
+		 IDENTIFIER is PTRA
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  PTRB  ]
+		 IDENTIFIER is PTRB
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  PTR  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTR is Present
+Token: Identifier   [  START  ]
+Token: SpecialChars [  ;  ]
+	Symbol START is Present
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  PTR  ]
+Token: RelOp        [  <>  ]
+	Symbol PTR is Present
+Token: Identifier   [  NULL  ]
+Token: SpecialChars [  )  ]
+	Symbol NULL is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  INDEG  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTR  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTR is Present
+Token: AssignMent   [  :=  ]
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  OUTDEG  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTR  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTR is Present
+Token: AssignMent   [  :=  ]
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  PTR  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTR is Present
+Token: Identifier   [  PTR  ]
+Token: AddOp        [  +  ]
+	Symbol PTR is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  PTRA  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTRA is NOT Present
+Token: Identifier   [  START  ]
+Token: SpecialChars [  ;  ]
+	Symbol START is NOT Present
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  PTRA  ]
+Token: RelOp        [  <>  ]
+	Symbol PTRA is NOT Present
+Token: Identifier   [  START  ]
+Token: SpecialChars [  )  ]
+	Symbol START is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  PTRB  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTRB is NOT Present
+Token: Identifier   [  ADJ  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTRA  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTRA is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  PTRB  ]
+Token: RelOp        [  <>  ]
+	Symbol PTRB is NOT Present
+Token: Identifier   [  NULL  ]
+Token: SpecialChars [  )  ]
+	Symbol NULL is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  OUTDEG  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTRA  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTRA is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  OUTDEG  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTRA  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTRA is NOT Present
+Token: AddOp        [  +  ]
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  INDEX  ]
+Token: AssignMent   [  :=  ]
+	Symbol INDEX is NOT Present
+Token: Identifier   [  DEST  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTRB  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTRB is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  INDEG  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  INDEX  ]
+Token: SpecialChars [  ]  ]
+	Symbol INDEX is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  INDEG  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  INDEX  ]
+Token: SpecialChars [  ]  ]
+	Symbol INDEX is NOT Present
+Token: AddOp        [  +  ]
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  PTRB  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTRB is NOT Present
+Token: Identifier   [  LINK  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTRB  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTRB is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  PTRA  ]
+Token: AssignMent   [  :=  ]
+	Symbol PTRA is NOT Present
+Token: Identifier   [  NEXT  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  PTRA  ]
+Token: SpecialChars [  ]  ]
+	Symbol PTRA is NOT Present
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  BEGIN  ]
+	ERROR AT LINE 25 : ';' expected
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'INPROGRAM'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test14------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  DEKKER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  flag  ]
+		IDENTIFIER is flag
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  0  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  turn  ]
+		IDENTIFIER is turn
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  i  ]
+Token: RelOp        [  >=  ]
+	Symbol i is NOT Present
+Token: Identifier   [  n  ]
+Token: SpecialChars [  )  ]
+	Symbol n is NOT Present
+Token: KEYWORD      [  AND  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  turn  ]
+Token: RelOp        [  =  ]
+	Symbol turn is Present
+Token: Identifier   [  i  ]
+Token: KEYWORD      [  OR  ]
+	Symbol i is NOT Present
+Token: Identifier   [  flag  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  turn  ]
+Token: SpecialChars [  ]  ]
+	Symbol turn is Present
+Token: RelOp        [  =  ]
+Token: Identifier   [  idle  ]
+Token: SpecialChars [  )  ]
+	Symbol idle is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: Identifier   [  flag  ]
+Token: AssignMent   [  :=  ]
+	Symbol flag is Present
+Token: Identifier   [  wantin  ]
+Token: SpecialChars [  ;  ]
+	Symbol wantin is NOT Present
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  trurn  ]
+Token: SpecialChars [  ;  ]
+	Symbol trurn is NOT Present
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  j  ]
+Token: RelOp        [  <>  ]
+	Symbol j is NOT Present
+Token: Identifier   [  i  ]
+Token: KEYWORD      [  DO  ]
+	Symbol i is NOT Present
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  flag  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  j  ]
+Token: SpecialChars [  ]  ]
+	Symbol j is NOT Present
+Token: RelOp        [  <>  ]
+Token: Identifier   [  idle  ]
+Token: KEYWORD      [  THEN  ]
+	Symbol idle is NOT Present
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  turn  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  ELSE  ]
+	Symbol turn is Present
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  j  ]
+Token: AddOp        [  +  ]
+	Symbol j is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  MOD  ]
+Token: Identifier   [  n  ]
+Token: SpecialChars [  ;  ]
+	Symbol n is NOT Present
+Token: Identifier   [  flag  ]
+Token: AssignMent   [  :=  ]
+	Symbol flag is Present
+Token: Identifier   [  INCS  ]
+Token: SpecialChars [  ;  ]
+	Symbol INCS is NOT Present
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  j  ]
+Token: RelOp        [  <=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  n  ]
+Token: SpecialChars [  )  ]
+	Symbol n is NOT Present
+Token: KEYWORD      [  AND  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  turn  ]
+Token: RelOp        [  =  ]
+	Symbol turn is Present
+Token: Identifier   [  i  ]
+Token: KEYWORD      [  OR  ]
+	Symbol i is NOT Present
+Token: Identifier   [  flag  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  j  ]
+Token: SpecialChars [  ]  ]
+	Symbol j is NOT Present
+Token: RelOp        [  <>  ]
+Token: Identifier   [  INCS  ]
+Token: SpecialChars [  )  ]
+	Symbol INCS is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  j  ]
+Token: AddOp        [  +  ]
+	Symbol j is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  turn  ]
+Token: AddOp        [  +  ]
+	Symbol turn is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  MOD  ]
+Token: Identifier   [  n  ]
+Token: SpecialChars [  ;  ]
+	Symbol n is NOT Present
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  flag  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  j  ]
+Token: SpecialChars [  ]  ]
+	Symbol j is NOT Present
+Token: RelOp        [  =  ]
+Token: Identifier   [  idle  ]
+Token: SpecialChars [  )  ]
+	Symbol idle is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is NOT Present
+Token: Identifier   [  j  ]
+Token: AddOp        [  +  ]
+	Symbol j is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  MOD  ]
+Token: Identifier   [  n  ]
+Token: SpecialChars [  ;  ]
+	Symbol n is NOT Present
+Token: Identifier   [  turn  ]
+Token: AssignMent   [  :=  ]
+	Symbol turn is Present
+Token: Identifier   [  j  ]
+Token: SpecialChars [  ;  ]
+	Symbol j is NOT Present
+Token: Identifier   [  flag  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  i  ]
+Token: SpecialChars [  ]  ]
+	Symbol i is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  idle  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  END  ]
+	Symbol idle is NOT Present
+		----- Correct----
+-------------------------Test/test15------------------------
+-------------------------Test/test16------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  example  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  x  ]
+		IDENTIFIER is x
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  y  ]
+		 IDENTIFIER is y
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  b  ]
+Token: RelOp        [  =  ]
+	Symbol b is NOT Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  ELSE  ]
+	Symbol a is NOT Present
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  b  ]
+Token: KEYWORD      [  END  ]
+	Symbol b is NOT Present
+		----- Correct----
+-------------------------Test/test17------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  example  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  x  ]
+		IDENTIFIER is x
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  y  ]
+		 IDENTIFIER is y
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  A  ]
+		IDENTIFIER is A
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B  ]
+		 IDENTIFIER is B
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  FOO  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  m  ]
+		IDENTIFIER is m
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  n  ]
+		 IDENTIFIER is n
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  x  ]
+Token: AssignMent   [  :=  ]
+	Symbol x is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  y  ]
+Token: AssignMent   [  :=  ]
+	Symbol y is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  b  ]
+Token: AssignMent   [  :=  ]
+	Symbol b is NOT Present
+Token: CharConst    [  'c'  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  c  ]
+Token: AssignMent   [  :=  ]
+	Symbol c is NOT Present
+Token: CharConst    [  'd'  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  b  ]
+Token: AssignMent   [  :=  ]
+	Symbol b is NOT Present
+Token: IntNum       [  3  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+-------------------------Test/test18------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  TheStars  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  i  ]
+		IDENTIFIER is i
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  j  ]
+		 IDENTIFIER is j
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  usr  ]
+		 IDENTIFIER is usr
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Howmanystarsdyouwant'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  usr  ]
+Token: SpecialChars [  )  ]
+	Symbol usr is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  i  ]
+Token: RelOp        [  >  ]
+	Symbol i is Present
+Token: Identifier   [  usr  ]
+Token: SpecialChars [  )  ]
+	Symbol usr is Present
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  i  ]
+Token: AssignMent   [  :=  ]
+	Symbol i is Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  ELSE  ]
+Token: Identifier   [  j  ]
+Token: AssignMent   [  :=  ]
+	Symbol j is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: CharConst    [  'a'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  i  ]
+Token: SpecialChars [  )  ]
+	Symbol i is NOT Present
+Token: KEYWORD      [  END  ]
+		----- Correct----
+-------------------------Test/test19------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  SHARED  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  buffer  ]
+		IDENTIFIER is buffer
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  full  ]
+		IDENTIFIER is full
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: KEYWORD      [  NOT  ]
+Token: Identifier   [  pfound  ]
+Token: SpecialChars [  )  ]
+	Symbol pfound is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  i  ]
+Token: KEYWORD      [  MOD  ]
+	Symbol i is NOT Present
+Token: IntNum       [  2  ]
+Token: RelOp        [  =  ]
+Token: IntNum       [  0  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  full  ]
+Token: RelOp        [  =  ]
+	Symbol full is Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  BEGIN  ]
+Eat Up COMMENTS 
+Token: Identifier   [  full  ]
+Token: AssignMent   [  :=  ]
+	Symbol full is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  pfound  ]
+Token: AssignMent   [  :=  ]
+	Symbol pfound is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  CASE  ]
+Token: Identifier   [  ABC  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  9  ]
+Token: AddOp        [  +  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  ]  ]
+	Symbol I is NOT Present
+Token: KEYWORD      [  OF  ]
+Token: IntNum       [  1  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  await  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  B  ]
+Token: SpecialChars [  )  ]
+	Symbol B is NOT Present
+Token: RelOp        [  =  ]
+Token: IntNum       [  9  ]
+Token: KEYWORD      [  OR  ]
+Token: KEYWORD      [  NOT  ]
+Token: Identifier   [  await  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  C  ]
+Token: SpecialChars [  )  ]
+	Symbol C is NOT Present
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  d  ]
+Token: AssignMent   [  :=  ]
+	Symbol d is NOT Present
+Token: IntNum       [  5  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  C  ]
+Token: AssignMent   [  :=  ]
+	Symbol C is NOT Present
+Token: CharConst    [  'C'  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'CORRECT'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  R  ]
+Token: AssignMent   [  :=  ]
+	Symbol R is NOT Present
+Token: CharConst    [  'C'  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: IntNum       [  2  ]
+Token: SpecialChars [  :  ]
+Token: Identifier   [  ABC  ]
+Token: AssignMent   [  :=  ]
+	Symbol ABC is NOT Present
+Token: Identifier   [  abc  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  I  ]
+Token: AddOp        [  +  ]
+	Symbol I is NOT Present
+Token: IntNum       [  3  ]
+Token: MulOp        [  *  ]
+Token: Identifier   [  d  ]
+Token: SpecialChars [  ]  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----
+-------------------------Test/test2------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  Test1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  X  ]
+		IDENTIFIER is X
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Y  ]
+		 IDENTIFIER is Y
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Z  ]
+		 IDENTIFIER is Z
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  A  ]
+		IDENTIFIER is A
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B  ]
+		 IDENTIFIER is B
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  IFEQUAL  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  m  ]
+		IDENTIFIER is m
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  n  ]
+		 IDENTIFIER is n
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  m  ]
+Token: AssignMent   [  :=  ]
+	Symbol m is Present
+Token: CharConst    [  't'  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  n  ]
+Token: AssignMent   [  :=  ]
+	Symbol n is Present
+Token: CharConst    [  'a'  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  m  ]
+Token: RelOp        [  =  ]
+	Symbol m is Present
+Token: Identifier   [  n  ]
+Token: KEYWORD      [  THEN  ]
+	Symbol n is Present
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  equal  ]
+	Symbol equal is NOT Present
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 7 : '(' missing
+Token: KEYWORD      [  ELSE  ]
+	ERROR AT LINE 8 : ',' missing within Expressions
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  notequal  ]
+	Symbol notequal is NOT Present
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 8 : '(' missing
+Token: KEYWORD      [  END  ]
+	ERROR AT LINE 9 : ',' missing within Expressions
+-------------------------Test/test20------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  disk  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  Qelement  ]
+		IDENTIFIER is Qelement
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  IOq  ]
+		IDENTIFIER is IOq
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  proceed  ]
+		IDENTIFIER is proceed
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  entryiorequest  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  procid  ]
+		IDENTIFIER is procid
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  trackno  ]
+		 IDENTIFIER is trackno
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Eat Up COMMENTS 
+Token: Identifier   [  count  ]
+Token: AssignMent   [  :=  ]
+	Symbol count is NOT Present
+Token: Identifier   [  count  ]
+Token: AddOp        [  -  ]
+	Symbol count is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  count  ]
+Token: RelOp        [  >  ]
+	Symbol count is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  proceed  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  procid  ]
+Token: SpecialChars [  ]  ]
+	Symbol procid is Present
+Token: AssignMent   [  :=  ]
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  ioinprogress  ]
+Token: AssignMent   [  :=  ]
+	Symbol ioinprogress is NOT Present
+Token: Identifier   [  procid  ]
+Token: KEYWORD      [  END  ]
+	Symbol procid is NOT Present
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  entryiocomplete  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  procid  ]
+		IDENTIFIER is procid
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  ioinprogress  ]
+Token: RelOp        [  =  ]
+	Symbol ioinprogress is NOT Present
+Token: Identifier   [  procid  ]
+Token: KEYWORD      [  THEN  ]
+	Symbol procid is Present
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  count  ]
+Token: AssignMent   [  :=  ]
+	Symbol count is NOT Present
+Token: Identifier   [  count  ]
+Token: AddOp        [  -  ]
+	Symbol count is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: Identifier   [  ioinprogress  ]
+Token: AssignMent   [  :=  ]
+	Symbol ioinprogress is NOT Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  schedulenext  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  signal  ]
+Token: SpecialChars [  )  ]
+	Symbol signal is NOT Present
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  entryioschedule  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  K  ]
+		IDENTIFIER is K
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  schedulenext  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  signal  ]
+Token: SpecialChars [  )  ]
+	Symbol signal is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  COUNT  ]
+Token: RelOp        [  >  ]
+	Symbol COUNT is NOT Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  BEGIN  ]
+Eat Up COMMENTS 
+Token: Identifier   [  proceed  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  procid  ]
+Token: SpecialChars [  ]  ]
+	Symbol procid is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  signal  ]
+Token: KEYWORD      [  END  ]
+	Symbol signal is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  COUNT  ]
+Token: AssignMent   [  :=  ]
+	Symbol COUNT is NOT Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  ioinprogress  ]
+Token: AssignMent   [  :=  ]
+	Symbol ioinprogress is NOT Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+Eat Up COMMENTS 
+-------------------------Test/test21------------------------
+Eat Up COMMENTS 
+-------------------------Test/test22------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  SimpleArrays  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  Count  ]
+		IDENTIFIER is Count
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Index  ]
+		 IDENTIFIER is Index
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Automobiles  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  12  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  Index  ]
+Token: AssignMent   [  :=  ]
+	Symbol Index is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Automobiles  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  6  ]
+Token: SpecialChars [  ]  ]
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  Index  ]
+Token: AddOp        [  +  ]
+	Symbol Index is Present
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'This'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: IntNum       [  2  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Index  ]
+Token: AssignMent   [  :=  ]
+	Symbol Index is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'automobile'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: IntNum       [  45  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'End'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test23------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  CalculateArea  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  InChar  ]
+		IDENTIFIER is InChar
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Length  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Width  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Height  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Base  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Radius  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  InChar  ]
+Token: RelOp        [  =  ]
+	Symbol InChar is Present
+Token: CharConst    [  'Q'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  OR  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  InChar  ]
+Token: RelOp        [  =  ]
+	Symbol InChar is Present
+Token: CharConst    [  'q'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'BCD'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Pleaseinputthefirstletteroftheselection'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Selectshape'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Requestedshapeis'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Keypressed  ]
+Token: SpecialChars [  )  ]
+	Symbol Keypressed is NOT Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  CASE  ]
+Token: Identifier   [  UpCase  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  InChar  ]
+Token: SpecialChars [  )  ]
+	Symbol InChar is Present
+Token: KEYWORD      [  OF  ]
+Token: CharConst    [  'S'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'SquarEntelengthofside'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Length  ]
+Token: SpecialChars [  )  ]
+	Symbol Length is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Theareais'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'R'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Rectangle'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Width  ]
+Token: SpecialChars [  )  ]
+	Symbol Width is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Enterheight'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Height  ]
+Token: SpecialChars [  )  ]
+	Symbol Height is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  AreaOfRectangle  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Width  ]
+Token: SpecialChars [  ,  ]
+	Symbol Width is NOT Present
+Token: Identifier   [  Height  ]
+Token: SpecialChars [  )  ]
+	Symbol Height is NOT Present
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'T'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Triangle'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Base  ]
+Token: SpecialChars [  )  ]
+	Symbol Base is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Enterheight'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Height  ]
+Token: SpecialChars [  )  ]
+	Symbol Height is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  AreaOfTriangle  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Base  ]
+Token: SpecialChars [  ,  ]
+	Symbol Base is NOT Present
+Token: Identifier   [  Height  ]
+Token: SpecialChars [  )  ]
+	Symbol Height is NOT Present
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'C'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Circle'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Radius  ]
+Token: SpecialChars [  )  ]
+	Symbol Radius is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  AreaOfCircle  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  Radius  ]
+Token: SpecialChars [  )  ]
+	Symbol Radius is NOT Present
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: CharConst    [  'Q'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Quit'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test24------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  PurePascalStrings  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  LongString  ]
+		IDENTIFIER is LongString
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  25  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  String10  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  String12  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  12  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  FirstName  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Initial  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  LastName  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  FullName  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Index  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  FirstName  ]
+Token: AssignMent   [  :=  ]
+	Symbol FirstName is NOT Present
+Token: IntNum       [  5  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Initial  ]
+Token: AssignMent   [  :=  ]
+	Symbol Initial is NOT Present
+Token: CharConst    [  'Q'  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  LastName  ]
+Token: AssignMent   [  :=  ]
+	Symbol LastName is NOT Present
+Token: CharConst    [  3.5  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  FirstName  ]
+Token: SpecialChars [  )  ]
+	Symbol FirstName is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  FullName  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  Index  ]
+Token: SpecialChars [  ]  ]
+	Symbol Index is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  FirstName  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  Index  ]
+Token: SpecialChars [  ]  ]
+	Symbol Index is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  FullName  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  11  ]
+Token: SpecialChars [  ]  ]
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  Initial  ]
+Token: SpecialChars [  ;  ]
+	Symbol Initial is NOT Present
+Token: Identifier   [  Index  ]
+Token: AssignMent   [  :=  ]
+	Symbol Index is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  FullName  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  Index  ]
+Token: AddOp        [  +  ]
+	Symbol Index is NOT Present
+Token: IntNum       [  11  ]
+Token: SpecialChars [  ]  ]
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  LastName  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  Index  ]
+Token: SpecialChars [  ]  ]
+	Symbol Index is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  FullName  ]
+Token: SpecialChars [  )  ]
+	Symbol FullName is NOT Present
+Token: KEYWORD      [  END  ]
+-------------------------Test/test25------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  test7  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  A1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  a  ]
+		IDENTIFIER is a
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  b  ]
+		 IDENTIFIER is b
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  c  ]
+		IDENTIFIER is c
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  A2  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  a  ]
+		IDENTIFIER is a
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  d  ]
+		IDENTIFIER is d
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  e  ]
+		 IDENTIFIER is e
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  d  ]
+Token: AssignMent   [  :=  ]
+	Symbol d is Present
+Token: CharConst    [  'a'  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  e  ]
+Token: AssignMent   [  :=  ]
+	Symbol e is Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  ;  ]
+	Symbol d is Present
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  d  ]
+Token: RelOp        [  =  ]
+	Symbol d is Present
+Token: Identifier   [  e  ]
+Token: SpecialChars [  )  ]
+	Symbol e is Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  CASE  ]
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  OF  ]
+	Symbol a is Present
+Token: CharConst    [  2.4  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'asd'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  3.8  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: SpecialChars [  '  ]
+Token: CharConst    [  3.56  ]
+Token: SpecialChars [  '  ]
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 11 : '(' missing
+Token: KEYWORD      [  END  ]
+	ERROR AT LINE 12 : ',' missing within Expressions
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  a  ]
+Token: RelOp        [  =  ]
+	Symbol a is NOT Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  )  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  b  ]
+Token: RelOp        [  =  ]
+	Symbol b is NOT Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  )  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  a  ]
+Token: AssignMent   [  :=  ]
+	Symbol a is NOT Present
+Token: Identifier   [  b  ]
+Token: KEYWORD      [  ELSE  ]
+	Symbol b is NOT Present
+Token: Identifier   [  b  ]
+Token: AssignMent   [  :=  ]
+	Symbol b is NOT Present
+Token: Identifier   [  d  ]
+Token: KEYWORD      [  END  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  infunction  ]
+	Symbol infunction is NOT Present
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 20 : '(' missing
+Token: SpecialChars [  ;  ]
+	ERROR AT LINE 20 : ',' missing within Expressions
+Token: Identifier   [  A1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  c  ]
+Token: SpecialChars [  ,  ]
+	Symbol c is NOT Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  ,  ]
+	Symbol d is NOT Present
+Token: Identifier   [  e  ]
+Token: SpecialChars [  )  ]
+	Symbol e is NOT Present
+Token: SpecialChars [  ;  ]
+	ERROR AT LINE 21 : ',' missing within Expressions
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  END  ]
+	Symbol a is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  InProgram  ]
+	Symbol InProgram is NOT Present
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 25 : '(' missing
+Token: KEYWORD      [  END  ]
+	ERROR AT LINE 26 : ',' missing within Expressions
+-------------------------Test/test26------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  disk  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  Qelement  ]
+		IDENTIFIER is Qelement
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  IOq  ]
+		IDENTIFIER is IOq
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  proceed  ]
+		IDENTIFIER is proceed
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  entryiorequest  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  procid  ]
+		IDENTIFIER is procid
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  trackno  ]
+		 IDENTIFIER is trackno
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Eat Up COMMENTS 
+Token: Identifier   [  count  ]
+Token: AssignMent   [  :=  ]
+	Symbol count is NOT Present
+Token: Identifier   [  count  ]
+Token: AddOp        [  -  ]
+	Symbol count is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  count  ]
+Token: RelOp        [  >  ]
+	Symbol count is NOT Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  proceed  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  procid  ]
+Token: SpecialChars [  ]  ]
+	Symbol procid is Present
+Token: AssignMent   [  :=  ]
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  ioinprogress  ]
+Token: AssignMent   [  :=  ]
+	Symbol ioinprogress is NOT Present
+Token: Identifier   [  procid  ]
+Token: KEYWORD      [  END  ]
+	Symbol procid is NOT Present
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  entryiocomplete  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  procid  ]
+		IDENTIFIER is procid
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  ioinprogress  ]
+Token: RelOp        [  =  ]
+	Symbol ioinprogress is NOT Present
+Token: Identifier   [  procid  ]
+Token: KEYWORD      [  THEN  ]
+	Symbol procid is Present
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  count  ]
+Token: AssignMent   [  :=  ]
+	Symbol count is NOT Present
+Token: Identifier   [  count  ]
+Token: AddOp        [  -  ]
+	Symbol count is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: Identifier   [  ioinprogress  ]
+Token: AssignMent   [  :=  ]
+	Symbol ioinprogress is NOT Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  schedulenext  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  signal  ]
+Token: SpecialChars [  )  ]
+	Symbol signal is NOT Present
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  entryioschedule  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  K  ]
+		IDENTIFIER is K
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  schedulenext  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  signal  ]
+Token: SpecialChars [  )  ]
+	Symbol signal is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  COUNT  ]
+Token: RelOp        [  >  ]
+	Symbol COUNT is NOT Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  BEGIN  ]
+Eat Up COMMENTS 
+Token: Identifier   [  proceed  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  procid  ]
+Token: SpecialChars [  ]  ]
+	Symbol procid is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  signal  ]
+Token: KEYWORD      [  END  ]
+	Symbol signal is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  COUNT  ]
+Token: AssignMent   [  :=  ]
+	Symbol COUNT is NOT Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  ioinprogress  ]
+Token: AssignMent   [  :=  ]
+	Symbol ioinprogress is NOT Present
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+Eat Up COMMENTS 
+-------------------------Test/test27------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  SumAverage  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  C  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  D  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  E  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Sum  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Average  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'firstnumber'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  A  ]
+Token: SpecialChars [  )  ]
+	Symbol A is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'secondnumber'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  B  ]
+Token: SpecialChars [  )  ]
+	Symbol B is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'thirdnumber'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  C  ]
+Token: SpecialChars [  )  ]
+	Symbol C is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'fourthnumber'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  D  ]
+Token: SpecialChars [  )  ]
+	Symbol D is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'fifthnumber'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  E  ]
+Token: SpecialChars [  )  ]
+	Symbol E is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Sum  ]
+Token: AssignMent   [  :=  ]
+	Symbol Sum is NOT Present
+Token: Identifier   [  A  ]
+Token: AddOp        [  +  ]
+	Symbol A is NOT Present
+Token: Identifier   [  B  ]
+Token: AddOp        [  +  ]
+	Symbol B is NOT Present
+Token: Identifier   [  C  ]
+Token: AddOp        [  +  ]
+	Symbol C is NOT Present
+Token: Identifier   [  D  ]
+Token: AddOp        [  +  ]
+	Symbol D is NOT Present
+Token: Identifier   [  E  ]
+Token: SpecialChars [  ;  ]
+	Symbol E is NOT Present
+Token: Identifier   [  Average  ]
+Token: AssignMent   [  :=  ]
+	Symbol Average is NOT Present
+Token: Identifier   [  Sum  ]
+Token: SpecialChars [  ;  ]
+	Symbol Sum is NOT Present
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'NumberofINTEGER'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Number'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Number'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Number'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Number'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Number'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Sum'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Average'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test28------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  TowersofHanoi  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  numdiscs  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  DoTowers  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  NumDiscs  ]
+		IDENTIFIER is NumDiscs
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  OrigPeg  ]
+		 IDENTIFIER is OrigPeg
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  NewPeg  ]
+		 IDENTIFIER is NewPeg
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  TempPeg  ]
+		 IDENTIFIER is TempPeg
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  NumDiscs  ]
+Token: RelOp        [  =  ]
+	Symbol NumDiscs is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'OrigPeg'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  ELSE  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  DoTowers  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  NumDiscs  ]
+Token: AddOp        [  -  ]
+	Symbol NumDiscs is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  OrigPeg  ]
+Token: SpecialChars [  ,  ]
+	Symbol OrigPeg is Present
+Token: Identifier   [  TempPeg  ]
+Token: SpecialChars [  ,  ]
+	Symbol TempPeg is Present
+Token: Identifier   [  NewPeg  ]
+Token: SpecialChars [  )  ]
+	Symbol NewPeg is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'ETC'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  DoTowers  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  NumDiscs  ]
+Token: AddOp        [  -  ]
+	Symbol NumDiscs is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  TempPeg  ]
+Token: SpecialChars [  ,  ]
+	Symbol TempPeg is Present
+Token: Identifier   [  NewPeg  ]
+Token: SpecialChars [  ,  ]
+	Symbol NewPeg is Present
+Token: Identifier   [  OrigPeg  ]
+Token: SpecialChars [  )  ]
+	Symbol OrigPeg is Present
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Eat Up COMMENTS 
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Pleaseenterthenumberofdiscsinthetower'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  numdiscs  ]
+Token: SpecialChars [  )  ]
+	Symbol numdiscs is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'ggg'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  DoTowers  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  numdiscs  ]
+Token: SpecialChars [  ,  ]
+	Symbol numdiscs is NOT Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  ,  ]
+Token: IntNum       [  3  ]
+Token: SpecialChars [  ,  ]
+Token: IntNum       [  2  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test3------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  CHECK  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  HELLO1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  A  ]
+		IDENTIFIER is A
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B  ]
+		 IDENTIFIER is B
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  HELLO2  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  C  ]
+		IDENTIFIER is C
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  D  ]
+		 IDENTIFIER is D
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A2  ]
+		IDENTIFIER is A2
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B2  ]
+		 IDENTIFIER is B2
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'INHELLO'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A3  ]
+		IDENTIFIER is A3
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B3  ]
+		 IDENTIFIER is B3
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'INHELLO'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A4  ]
+		IDENTIFIER is A4
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B4  ]
+		 IDENTIFIER is B4
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'INCHECK'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----
+-------------------------Test/test4------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  CHECK  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  HELLO1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  A  ]
+		IDENTIFIER is A
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B  ]
+		 IDENTIFIER is B
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  HELLO2  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  C  ]
+		IDENTIFIER is C
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  D  ]
+		 IDENTIFIER is D
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A2  ]
+		IDENTIFIER is A2
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  B2  ]
+		 IDENTIFIER is B2
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: SpecialChars [  '  ]
+Token: Identifier   [  INHELLO2  ]
+Token: SpecialChars [  '  ]
+	Symbol INHELLO2 is NOT Present
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 6 : '(' missing
+Token: KEYWORD      [  END  ]
+	ERROR AT LINE 7 : ',' missing within Expressions
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A3  ]
+Token: SpecialChars [  ,  ]
+	Symbol A3 is NOT Present
+Token: Identifier   [  B3  ]
+Token: SpecialChars [  :  ]
+	Symbol B3 is NOT Present
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: SpecialChars [  '  ]
+Token: Identifier   [  INHELLO1  ]
+Token: SpecialChars [  '  ]
+	Symbol INHELLO1 is NOT Present
+Token: SpecialChars [  )  ]
+	ERROR AT LINE 10 : '(' missing
+Token: KEYWORD      [  END  ]
+	ERROR AT LINE 11 : ',' missing within Expressions
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  A4  ]
+Token: SpecialChars [  ,  ]
+	Symbol A4 is NOT Present
+Token: Identifier   [  B4  ]
+Token: SpecialChars [  :  ]
+	Symbol B4 is NOT Present
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'INCHECK'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test5------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  PUREXPASCALXSTRINGS  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  LONGXSTRING  ]
+		IDENTIFIER is LONGXSTRING
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  25  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  STRING10  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  10  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  STRING12  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  12  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  INITIAL  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  INDEX  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  FIRSTXNAME  ]
+Token: AssignMent   [  :=  ]
+	Symbol FIRSTXNAME is NOT Present
+Token: StringConst  [  'JOHN'  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  INITIAL  ]
+Token: AssignMent   [  :=  ]
+	Symbol INITIAL is NOT Present
+Token: CharConst    [  'Q'  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  LASTXNAME  ]
+Token: AssignMent   [  :=  ]
+	Symbol LASTXNAME is NOT Present
+Token: StringConst  [  'DOE'  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  FIRSTXNAMESTXNAME  ]
+Token: SpecialChars [  )  ]
+	Symbol FIRSTXNAMESTXNAME is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  INDEX  ]
+Token: RelOp        [  <=  ]
+	Symbol INDEX is NOT Present
+Token: IntNum       [  10  ]
+Token: KEYWORD      [  DO  ]
+Token: Identifier   [  FULLXNAME  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  INDEX  ]
+Token: SpecialChars [  ]  ]
+	Symbol INDEX is NOT Present
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  FIRSTXNAME  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  INDEX  ]
+Token: SpecialChars [  ]  ]
+	Symbol INDEX is NOT Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  FULLXNAME  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  11  ]
+Token: SpecialChars [  ]  ]
+Token: AssignMent   [  :=  ]
+Token: Identifier   [  INITIAL  ]
+Token: SpecialChars [  ;  ]
+	Symbol INITIAL is NOT Present
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  FULLXNAME  ]
+Token: SpecialChars [  )  ]
+	Symbol FULLXNAME is NOT Present
+Token: KEYWORD      [  END  ]
+-------------------------Test/test6------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  Calculates  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  InChar  ]
+		IDENTIFIER is InChar
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  Length  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Width  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Height  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Base  ]
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  Radius  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WHILE  ]
+Token: IntNum       [  0  ]
+Token: KEYWORD      [  OR  ]
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'InWhile'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Please'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Selectuit'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Reques'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  InChar  ]
+Token: AssignMent   [  :=  ]
+	Symbol InChar is Present
+Token: Identifier   [  ReadKey  ]
+Token: SpecialChars [  ;  ]
+	Symbol ReadKey is NOT Present
+Token: KEYWORD      [  CASE  ]
+Token: Identifier   [  UPCASE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  INCHAR  ]
+Token: SpecialChars [  )  ]
+	Symbol INCHAR is NOT Present
+Token: KEYWORD      [  OF  ]
+Token: CharConst    [  'S'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'SQSIDE'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  LENGTH  ]
+Token: SpecialChars [  )  ]
+	Symbol LENGTH is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Th'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'R'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'RECTANGL'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  WIDTH  ]
+Token: SpecialChars [  )  ]
+	Symbol WIDTH is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'ENTERHEIGHT'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  HEIGHT  ]
+Token: SpecialChars [  )  ]
+	Symbol HEIGHT is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'IS'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'T'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'TRIA'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  BASE  ]
+Token: SpecialChars [  )  ]
+	Symbol BASE is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  HEIGHT  ]
+Token: SpecialChars [  )  ]
+	Symbol HEIGHT is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'C'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  RADIUS  ]
+Token: SpecialChars [  )  ]
+	Symbol RADIUS is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  'Q'  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'QUIT'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+-------------------------Test/test7------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  test7  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  A1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  a  ]
+		IDENTIFIER is a
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  b  ]
+		 IDENTIFIER is b
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  c  ]
+		IDENTIFIER is c
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  CHARACTER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  A2  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  a  ]
+		IDENTIFIER is a
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  d  ]
+		IDENTIFIER is d
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  e  ]
+		 IDENTIFIER is e
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  FLOAT  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  d  ]
+Token: AssignMent   [  :=  ]
+	Symbol d is Present
+Token: CharConst    [  'a'  ]
+Token: SpecialChars [  ;  ]
+Eat Up COMMENTS 
+Token: Identifier   [  e  ]
+Token: AssignMent   [  :=  ]
+	Symbol e is Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  ;  ]
+	Symbol d is Present
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  d  ]
+Token: RelOp        [  =  ]
+	Symbol d is Present
+Token: Identifier   [  e  ]
+Token: SpecialChars [  )  ]
+	Symbol e is Present
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  CASE  ]
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  OF  ]
+	Symbol a is Present
+Token: CharConst    [  2.4  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'asd'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: CharConst    [  3.8  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'ard'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  a  ]
+Token: RelOp        [  =  ]
+	Symbol a is NOT Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  )  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  b  ]
+Token: RelOp        [  =  ]
+	Symbol b is NOT Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  )  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  a  ]
+Token: AssignMent   [  :=  ]
+	Symbol a is NOT Present
+Token: Identifier   [  b  ]
+Token: KEYWORD      [  ELSE  ]
+	Symbol b is NOT Present
+Token: Identifier   [  b  ]
+Token: AssignMent   [  :=  ]
+	Symbol b is NOT Present
+Token: Identifier   [  d  ]
+Token: KEYWORD      [  END  ]
+	Symbol d is NOT Present
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'infunction'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  A1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  c  ]
+Token: SpecialChars [  ,  ]
+	Symbol c is NOT Present
+Token: Identifier   [  d  ]
+Token: SpecialChars [  ,  ]
+	Symbol d is NOT Present
+Token: Identifier   [  e  ]
+Token: SpecialChars [  )  ]
+	Symbol e is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  a  ]
+Token: KEYWORD      [  END  ]
+	Symbol a is NOT Present
+	ERROR AT LINE NO. 23:  ';' expected  token
+		----Not  Correct----
+Token: SpecialChars [  ;  ]
+-------------------------Test/test8------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  MINARRRAY  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  MIN  ]
+		IDENTIFIER is MIN
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  ARR  ]
+		IDENTIFIER is ARR
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  PROCEDURE  ]
+	New Symbol Table is created
+Token: Identifier   [  GETDATA  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+		IDENTIFIER is ARR
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  I  ]
+		IDENTIFIER is I
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  I  ]
+Token: AssignMent   [  :=  ]
+	Symbol I is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  I  ]
+Token: RelOp        [  <  ]
+	Symbol I is Present
+Token: IntNum       [  20  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  ]  ]
+	Symbol I is Present
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  I  ]
+Token: AssignMent   [  :=  ]
+	Symbol I is Present
+Token: Identifier   [  I  ]
+Token: AddOp        [  +  ]
+	Symbol I is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  FINDMIN  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+		IDENTIFIER is ARR
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  ARRAY  ]
+Token: SpecialChars [  [  ]
+Token: IntNum       [  1  ]
+Token: Range [  ..  ]
+Token: IntNum       [  20  ]
+Token: SpecialChars [  ]  ]
+Token: KEYWORD      [  OF  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  MIN  ]
+		IDENTIFIER is MIN
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  I  ]
+		 IDENTIFIER is I
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  I  ]
+Token: AssignMent   [  :=  ]
+	Symbol I is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  MIN  ]
+Token: AssignMent   [  :=  ]
+	Symbol MIN is Present
+Token: IntNum       [  0  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: Identifier   [  I  ]
+Token: RelOp        [  <  ]
+	Symbol I is Present
+Token: IntNum       [  20  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  MIN  ]
+Token: RelOp        [  >  ]
+	Symbol MIN is Present
+Token: Identifier   [  ARR  ]
+Token: SpecialChars [  [  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  ]  ]
+	Symbol I is Present
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  THEN  ]
+Token: Identifier   [  MIN  ]
+Token: AssignMent   [  :=  ]
+	Symbol MIN is Present
+Token: Identifier   [  I  ]
+Token: KEYWORD      [  ELSE  ]
+	Symbol I is Present
+Token: Identifier   [  I  ]
+Token: AssignMent   [  :=  ]
+	Symbol I is Present
+Token: Identifier   [  I  ]
+Token: AddOp        [  +  ]
+	Symbol I is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  MIN  ]
+Token: KEYWORD      [  END  ]
+	Symbol MIN is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  GETDATA  ]
+Token: SpecialChars [  (  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  MIN  ]
+Token: AssignMent   [  :=  ]
+	Symbol MIN is NOT Present
+Token: Identifier   [  FINDMIN  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  ARR  ]
+Token: SpecialChars [  )  ]
+	Symbol ARR is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'MIN'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 
+-------------------------Test/test9------------------------
+Token: KEYWORD      [  PROGRAM  ]
+	New Symbol Table is created
+Token: Identifier   [  test9  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  VAR  ]
+Token: Identifier   [  v1  ]
+		IDENTIFIER is v1
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  v2  ]
+		 IDENTIFIER is v2
+Insert Successfully
+Token: SpecialChars [  ,  ]
+Token: Identifier   [  v3  ]
+		 IDENTIFIER is v3
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  FUNCTION  ]
+	New Symbol Table is created
+Token: Identifier   [  F1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  I  ]
+		IDENTIFIER is I
+Insert Successfully
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  :  ]
+Token: KEYWORD      [  INTEGER  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: Identifier   [  I  ]
+Token: RelOp        [  =  ]
+	Symbol I is Present
+Token: IntNum       [  1  ]
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  RETURN  ]
+Token: Identifier   [  I  ]
+Token: KEYWORD      [  ELSE  ]
+	Symbol I is Present
+Token: Identifier   [  I  ]
+Token: AssignMent   [  :=  ]
+	Symbol I is Present
+Token: Identifier   [  I  ]
+Token: MulOp        [  *  ]
+	Symbol I is Present
+Token: Identifier   [  F1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  I  ]
+Token: AddOp        [  -  ]
+	Symbol I is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'Enterthenumber'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  v1  ]
+Token: SpecialChars [  )  ]
+	Symbol v1 is Present
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  F1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  )  ]
+	Symbol I is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WHILE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  v1  ]
+Token: RelOp        [  <  ]
+	Symbol v1 is Present
+Token: Identifier   [  I  ]
+Token: SpecialChars [  )  ]
+	Symbol I is NOT Present
+Token: KEYWORD      [  AND  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  v1  ]
+Token: RelOp        [  >  ]
+	Symbol v1 is Present
+Token: IntNum       [  1  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  DO  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: Identifier   [  v1  ]
+Token: AssignMent   [  :=  ]
+	Symbol v1 is Present
+Token: IntNum       [  4  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  IF  ]
+Token: SpecialChars [  (  ]
+Token: KEYWORD      [  NOT  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  )  ]
+	Symbol I is NOT Present
+Token: KEYWORD      [  THEN  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  v2  ]
+Token: SpecialChars [  )  ]
+	Symbol v2 is Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'abc'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  F1  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  )  ]
+	Symbol I is NOT Present
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  ELSE  ]
+Token: KEYWORD      [  BEGIN  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'inelse'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: Identifier   [  v1  ]
+Token: AssignMent   [  :=  ]
+	Symbol v1 is NOT Present
+Token: Identifier   [  v1  ]
+Token: AddOp        [  +  ]
+	Symbol v1 is NOT Present
+Token: Identifier   [  v2  ]
+Token: KEYWORD      [  END  ]
+	Symbol v2 is NOT Present
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'def'  ]
+Token: SpecialChars [  )  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  READ  ]
+Token: SpecialChars [  (  ]
+Token: Identifier   [  I  ]
+Token: SpecialChars [  )  ]
+	Symbol I is NOT Present
+Token: KEYWORD      [  END  ]
+Token: SpecialChars [  ;  ]
+Token: KEYWORD      [  WRITE  ]
+Token: SpecialChars [  (  ]
+Token: StringConst  [  'lastbegin'  ]
+Token: SpecialChars [  )  ]
+Token: KEYWORD      [  END  ]
+Token: KEYWORD      [  END  ]
+		----- Correct----- 

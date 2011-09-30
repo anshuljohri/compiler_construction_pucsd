@@ -1,0 +1,20 @@
+PROGRAM PurePascalStrings;
+VAR  LongString  : ARRAY[1..25] OF CHARACTER;
+     String10    : ARRAY[1..10] OF CHARACTER;
+     String12    : ARRAY[1..12] OF CHARACTER;
+     FirstName   : INTEGER;
+     Initial     : CHARACTER;
+     LastName    : FLOAT;
+     FullName    : INTEGER;
+     Index       : INTEGER;
+BEGIN
+   FirstName := 5;
+   Initial := 'Q';
+   LastName :=3.5;
+   WRITE(FirstName);
+      FullName[Index] ;= FirstName[Index];
+   FullName[11] ;= Initial;
+   Index := 1; 
+      FullName[Index + 11] := LastName[Index];
+     WRITE("FullName)
+END
